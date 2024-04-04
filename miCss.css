@@ -1,0 +1,87 @@
+/*
+    INICIO HEADER //////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+
+/* // //////////////////// // */
+/* //        TÍTULO        // */
+/* // //////////////////// // */
+
+header{
+    background-color: rgb(26, 151, 10);
+    color: antiquewhite;
+    padding: 1%;
+    font-size: 100%;
+    text-align: center;
+}
+
+/* // //////////////////// // */
+/* //        LOGO          // */
+/* // //////////////////// // */
+
+/*
+Contenedor de imágenes
+*/
+.Contenedor{
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    right: 40%;
+}
+
+#logo{
+    position: relative;
+    width: 70%;
+    right: 40%;
+    
+}
+
+/* // //////////////////// // */
+/* //       NAVEGADOR      // */
+/* // //////////////////// // */
+
+/*
+La siguiente sección se corresponde con la barra de navegación entre las distintas páginas
+*/
+
+.Navegador{
+    background-color: rgb(12, 112, 5);
+    overflow: hidden;
+}
+
+nav{
+    float: unset;
+    display: block;
+    color: white;
+    text-align: center;
+    font-size: 1.875em;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+nav:hover{
+    background-color: rgb(39, 174, 53);
+    color:blueviolet;
+}
+
+nav ul li{
+    list-style-type: none;
+    margin: 0;
+    display: inline;
+    padding: 50px;
+}
+
+/*
+    FIN HEADER //////////////////////////////////////////////////////////////////////////////////////////////////
+*/ 
+
+/*
+    INICIO BODY /////////////////////////////////////////////////////////////////////////////////////////////////
+*/ 
+body{
+    margin: 0;
+    background-image: url("imagenes/Fondo.png");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+}
