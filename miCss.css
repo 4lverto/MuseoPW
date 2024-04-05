@@ -7,11 +7,9 @@
 /* // //////////////////// // */
 
 header{
-    background-color: rgb(26, 151, 10);
+    background-color: rgb(38, 103, 30);
     color: antiquewhite;
-    padding: 1%;
-    font-size: 100%;
-    text-align: center;
+    padding: 0;
 }
 
 /* // //////////////////// // */
@@ -21,19 +19,15 @@ header{
 /*
 Contenedor de imágenes
 */
-.Contenedor{
+.ContenedorLogo{
     position: relative;
     width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-    right: 40%;
+    max-width: 200px;
 }
 
 #logo{
     position: relative;
-    width: 70%;
-    right: 40%;
-    
+    width: 65%;
 }
 
 /* // //////////////////// // */
@@ -45,35 +39,49 @@ La siguiente sección se corresponde con la barra de navegación entre las disti
 */
 
 .Navegador{
-    background-color: rgb(12, 112, 5);
-    overflow: hidden;
+    width: 100%;
 }
 
-nav{
-    float: unset;
-    display: block;
-    color: white;
-    text-align: center;
-    font-size: 1.875em;
-    padding: 10px 12px;
-    text-decoration: none;
-}
-
-nav:hover{
-    background-color: rgb(39, 174, 53);
-    color:blueviolet;
-}
-
-nav ul li{
+ul{
     list-style-type: none;
     margin: 0;
-    display: inline;
-    padding: 50px;
-}
+    padding: 0;
+
+    overflow: hidden;
+    background-color: #333;
+    
+    text-align: center;
+  }
+  
+   li {
+    display: inline-block;
+    margin-left: 5%;
+    margin-right: 5%; 
+  }
+  
+  li a {
+    color: white;
+    text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+
+    padding: 14px 16px;
+    font-size: 100%;
+  }
+  
+  nav ul li a:hover:not(.actual) {
+    background-color: #111;
+  }
+
+  .actual{
+    color: #111;
+    background-color: aquamarine;
+  }
 
 /*
     FIN HEADER //////////////////////////////////////////////////////////////////////////////////////////////////
-*/ 
+*/
 
 /*
     INICIO BODY /////////////////////////////////////////////////////////////////////////////////////////////////
@@ -84,4 +92,14 @@ body{
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
+}
+
+footer {
+    background-color: rgb(12, 112, 5);
+    color: white;
+    text-align: center;
+    position: fixed;
+    padding: 0; 
+    bottom: 0; /*Para indicarle que va abajo*/
+    width: 100%;
 }
