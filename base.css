@@ -7,9 +7,8 @@
 /* // //////////////////// // */
 
 header{
-    background-color: rgb(38, 103, 30);
-    color: antiquewhite;
-    padding: 0;
+    background-color: rgb(112, 233, 233);
+    color: rgb(0, 0, 0);
 }
 
 /* // //////////////////// // */
@@ -27,7 +26,33 @@ Contenedor de imágenes
 
 #logo{
     position: relative;
-    width: 65%;
+    width: 75%;
+    left: 25%;
+}
+
+/* // //////////////////// // */
+/* //    INICIO SESIÓN     // */
+/* // //////////////////// // */
+
+.InicioSesion{
+    position: absolute;
+    top: 1%;
+    right: 5%;
+    width: 100%;
+    max-width: 200px;
+    padding: 0;
+}
+
+.InicioSesion label{
+    margin-bottom: 1%;
+}
+
+.InicioSesion input{
+    margin-bottom: 1%;
+}
+
+#alta{
+    color:rgb(0, 0, 0);
 }
 
 /* // //////////////////// // */
@@ -45,7 +70,6 @@ La siguiente sección se corresponde con la barra de navegación entre las disti
 ul{
     list-style-type: none;
     margin: 0;
-    padding: 0;
 
     overflow: hidden;
     background-color: #333;
@@ -88,15 +112,18 @@ ul{
 */ 
 body{
     margin: 0;
-    background-image: url("imagenes/Fondo.png");
+    background-image: url("imagenes/Fondo2.png");
     background-repeat: no-repeat;
     background-position: top;
     background-size: cover;
 }
 
+
+
 footer {
-    background-color: rgb(12, 112, 5);
-    color: white;
+    background-color: rgb(112, 233, 233);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
     text-align: center;
     position: fixed;
     padding: 0; 
