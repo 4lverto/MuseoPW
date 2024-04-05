@@ -1,0 +1,13 @@
+/*
+    Directrices de diseño del cuerpo (body) el índice del proyecto
+*/
+
+body{
+    max-width: 10000000000
+    ;
+}
+
+h1{
+    display: block;
+    text-align: center;
+}
