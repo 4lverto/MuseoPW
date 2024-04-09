@@ -6,6 +6,8 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
     cursor: url("imagenes/cursor.png") 0 -15,auto;
 }
 
@@ -16,7 +18,7 @@
 body{
     line-height: 1;
     margin: 0;
-    background-image: url("imagenes/Fondo2.png");
+    background-image: url("imagenes/Fondo.png");
     background-size: cover;
     background-position: auto;
     background-size: cover;
@@ -31,16 +33,30 @@ body{
 /* //        TÍTULO        // */
 /* // //////////////////// // */
 
+/*
 .header{
-    background-color: rgb(112, 233, 233);
-    color: rgb(0, 0, 0);
+    background-color: rgb(176, 34, 34);
+    color: rgb(73, 60, 60);
 
     display: flex;
-    justify-content: space-between; /**/
-    align-items: center; /**/
+    justify-content: space-between; 
+    align-items: center; 
     height: 85px;
     padding: 10%;
 
+}
+*/
+
+header{
+    
+    background-image: url("imagenes/cielo.jpg");
+    color: rgb(73, 60, 60);
+    
+    display: block;
+    justify-content: space-between;
+
+    align-items: center;
+    padding: 0;
 }
 
 /* // //////////////////// // */
@@ -72,7 +88,7 @@ La siguiente sección se corresponde con la barra de navegación entre las disti
 header .Navegador-Links{
     list-style: none;
     list-style-type: none;
-
+    
     overflow: hidden;
     background-color: #333;
     

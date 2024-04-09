@@ -4,14 +4,33 @@
 
                                 /*  // ///////////////////////////// //
                                     //         INICIO MAIN           //
-                                    // ///////////////////////////// //
+                                    // ////////////////////////////  //
                                 */
 
 main{
 
 }
 
-h1{
-    display: block;
-    text-align: center;
+main .TituloMuseo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 1%;
+}
+
+main .TituloMuseo .Rectangulo{
+   width: 500px;
+   height: 70px;
+
+   background-image: url("imagenes/cielo.jpg");
+   border: 2px solid black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+main .TituloMuseo .Rectangulo h1{
+    font-size: 50px;
+    color: black;
 }
