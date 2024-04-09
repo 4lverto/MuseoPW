@@ -5,6 +5,8 @@
         <title>Museo Mojang</title>
         <meta charset="utf-8"/>
         <link rel = "stylesheet" type = "text/css" href="base.css"/>
+        <link rel = "stylesheet" type = "text/css" href="indice.css"/>
+
         <meta name="viewport" content="width=device-width">
 
     </head>
@@ -12,26 +14,33 @@
     <body>
 
         <header>
-            <!-- Usamos una clase contenedor que contendrá la imagen-->
+            <!-- Usamos una clase ContenedorLogo que contendrá el Logo del museo-->
             <section class="ContenedorLogo">
-                <img src="imagenes/Logo.png" id="logo">
+                <img src="imagenes/Logo.png" ref="index.html" id="logo">
             </section>
+
+            <!-- Sección que corresponderá con el menú de navegación-->
+            <section class="Navegador">
+                <nav>
+                    <ul class="Navegador-Links">
+                        <li><a href="index.html">Página principal</a></li>
+                        <li><a href="coleccion.html">Colección</a></li>
+                        <li><a href="visita.html">Visita</a></li>
+                        <li><a class="actual" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="informacion.html">Información</a></li>
+                        <li><a href="experiencias.html">Experiencias</a></li>
+                    </ul>
+                </nav>
+            </section>
+
         </header>
 
-        <!-- Sección que corresponderá con el menú de navegación-->
-        <section class="Navegador">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Página principal</a></li>
-                    <li><a href="coleccion.html">Colección</a></li>
-                    <li><a href="visita.html">Visita</a></li>
-                    <li><a class="actual" href="exposiciones.html">Exposiciones</a></li>
-                    <li><a href="informacion.html">Información</a></li>
-                    <li><a href="experiencias.html">Experiencias</li>
-                </ul>
-            </nav>
-        </section>
+        <main>
 
+            <h1> MUSEO MOJANG</h1>
+
+
+        </main>
         
         <footer>
             <p> <a href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a></p>

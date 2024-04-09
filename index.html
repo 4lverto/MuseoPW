@@ -19,26 +19,10 @@
                 <img src="imagenes/Logo.png" id="logo">
             </section>
 
-            <!-- Usamos una clase InicioSesion que contendrá el formulario de inicio de sesión-->
-            <section class="InicioSesion">
-                <form action="/action_page.php">
-                    <label for="Correo">Correo electrónico: </label><br>
-                    <input type="text" id="Correo" name="Correo" placeholder="ejemplo@gmail.com"><br>
-
-                    <label for="Contraseña">Contraseña: </label><br>
-                    <input type="password" id="Contraseña" name="Contraseña"><br>
-
-                    <input type="submit" value="Iniciar Sesión"><br>
-                </form>
-
-                <a href="alta_usuario.html" id="alta">Registrarse</a>
-                
-            </section>
-
             <!-- Sección que corresponderá con el menú de navegación-->
             <section class="Navegador">
                 <nav>
-                    <ul>
+                    <ul class="Navegador-Links">
                         <li><a class="actual" href="index.html">Página principal</a></li>
                         <li><a href="coleccion.html">Colección</a></li>
                         <li><a href="visita.html">Visita</a></li>
@@ -48,6 +32,23 @@
                     </ul>
                 </nav>
             </section>
+
+            <!-- Usamos una clase InicioSesion que contendrá el formulario de inicio de sesión-->
+            <section class="InicioSesion">
+                <form action="/action_page.php">
+                    <label for="Correo">Correo electrónico: </label><br>
+                    <input type="text" id="Correo" name="Correo" placeholder="ejemplo@gmail.com"><br>
+
+                    <label for="Contraseña">Contraseña: </label><br>
+                    <input type="password" id="Contraseña" name="Contraseña"><br>
+
+                    <input type="submit" id="iniciar" value="Iniciar Sesión"><br>
+                </form>
+
+                <a href="alta_usuario.html" id="registro">Registrarse</a>
+                
+            </section>
+
         </header>
 
         <main>

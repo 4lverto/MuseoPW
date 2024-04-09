@@ -1,14 +1,46 @@
+
+/*FORMATEAMOS EL DOCUMENTO*/
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    cursor: url("imagenes/cursor.png") 0 -15,auto;
+}
+
 /*
-    /////////////////////////////////////////////////// INICIO HEADER ///////////////////////////////////////////////////
+    /////////////////////////////////////////////////// INICIO BODY ///////////////////////////////////////////////////
 */
+
+body{
+    line-height: 1;
+    margin: 0;
+    background-image: url("imagenes/Fondo2.png");
+    background-size: cover;
+    background-position: auto;
+    background-size: cover;
+}
+
+                                /*  // ///////////////////////////// //
+                                    //        INICIO HEADER          //
+                                    // ///////////////////////////// //
+                                */
 
 /* // //////////////////// // */
 /* //        TÍTULO        // */
 /* // //////////////////// // */
 
-header{
+.header{
     background-color: rgb(112, 233, 233);
     color: rgb(0, 0, 0);
+
+    display: flex;
+    justify-content: space-between; /**/
+    align-items: center; /**/
+    height: 85px;
+    padding: 10%;
+
 }
 
 /* // //////////////////// // */
@@ -18,41 +50,14 @@ header{
 /*
 Contenedor de imágenes
 */
-.ContenedorLogo{
-    position: relative;
-    width: 100%;
-    max-width: 200px;
+header #logo{
+    height: 120px;
+    width: auto;
+    transition: 0.13; /*Lo usamos para que la transformación al pasar el cursos por encima no sea muy exagerada*/
 }
 
-#logo{
-    position: relative;
-    width: 75%;
-    left: 25%;
-}
-
-/* // //////////////////// // */
-/* //    INICIO SESIÓN     // */
-/* // //////////////////// // */
-
-.InicioSesion{
-    position: absolute;
-    top: 1%;
-    right: 5%;
-    width: 100%;
-    max-width: 200px;
-    padding: 0;
-}
-
-.InicioSesion label{
-    margin-bottom: 1%;
-}
-
-.InicioSesion input{
-    margin-bottom: 1%;
-}
-
-#alta{
-    color:rgb(0, 0, 0);
+header #logo:hover{ /* Lo de hover se usa para que cuando pongamos el cursor encima, haga un efecto*/
+    transform: scale(1.1); /* Así agrandaremos el logo cuando pasemos por encima*/
 }
 
 /* // //////////////////// // */
@@ -63,13 +68,10 @@ Contenedor de imágenes
 La siguiente sección se corresponde con la barra de navegación entre las distintas páginas
 */
 
-.Navegador{
-    width: 100%;
-}
 
-ul{
+header .Navegador-Links{
+    list-style: none;
     list-style-type: none;
-    margin: 0;
 
     overflow: hidden;
     background-color: #333;
@@ -77,65 +79,107 @@ ul{
     text-align: center;
   }
   
-   li {
+header .Navegador-Links li{
     display: inline-block;
-    margin-left: 5%;
-    margin-right: 5%; 
+    padding: 0 30px; /*0 Arriba y abajo, y 20px a los lados*/
   }
   
-  li a {
-    color: white;
+header .Navegador-Links li a{
+    font-size: 100%;
     text-decoration: none;
 
     display: inline-block;
     text-align: center;
 
     padding: 14px 16px;
-    font-size: 100%;
+  }
+
+header .Navegador-Links li a:not(.actual){
+    color: white;
   }
   
-  nav ul li a:hover:not(.actual) {
+header .Navegador-Links li a:hover:not(.actual) {
+    color: rgb(112, 233, 233);
     background-color: #111;
-  }
-
-  .actual{
-    color: #111;
-    background-color: aquamarine;
-  }
-
-/*
-        /////////////////////////////////////////////////// FIN HEADER ///////////////////////////////////////////////////
-*/
-
-/*
-        /////////////////////////////////////////////////// INICIO BODY ///////////////////////////////////////////////////
-*/ 
-body{
-    margin: 0;
-    background-image: url("imagenes/Fondo2.png");
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
+    transform: scale(1.1); /*Cuando pasemos el cursos por encima, aumentan un poco su tamaño*/
 }
 
-/*
-/////////////////////////////////////////////////// FIN BODY ///////////////////////////////////////////////////
-*/
+header .Navegador-Links li .actual{
+    color: #111;
+    background-color: aquamarine;
+}
 
-/*
-/////////////////////////////////////////////////// INICIO FOOTER ///////////////////////////////////////////////////
-*/
+header .Navegador-Links li .actual:hover{
+    transform: scale(1.1);
+}
+
+/* // //////////////////// // */
+/* //    INICIO SESIÓN     // */
+/* // //////////////////// // */
+
+header .InicioSesion{
+    cursor: pointer;
+    position: fixed;
+    display: block;
+
+    top: 0%;
+    right: 2%;
+    text-align: right;
+
+    padding: 0;
+}
+
+#iniciar:hover{
+    transform: scale(1.1);
+    padding: 1%;
+}
+
+#registro:hover{
+    transform: scale(1.1);
+    text-decoration: dashed;
+    color:rgb(254, 203, 75);
+}
+
+                                /*  // ////////////////////////// //
+                                    //        FIN HEADER          //
+                                    // ////////////////////////// //
+                                */
+
+                                /*  // /////////////////////////// //
+                                    //        INICIO MAIN          //
+                                    // /////////////////////////// //
+                                */
+
+                                /*  // //////////////////////// //
+                                    //        FIN MAIN          //
+                                    // //////////////////////// //
+                                */
+
+                                /*  // ///////////////////////////// //
+                                    //          INICIO FOOTER        //
+                                    // ///////////////////////////// //
+                                */
 
 footer {
+    clear: both;
     background-color: rgb(112, 233, 233);
     text-decoration: none;
     color: rgb(0, 0, 0);
     text-align: center;
     position: fixed;
-    padding: 0; 
+    padding: 2em 3%; 
     bottom: 0; /*Para indicarle que va abajo*/
-    width: 100%;
+    width: 100% /*Para que rellene toda la página en horizontal*/;
 }
+
+footer a:hover{
+    transform: scale(1.2);
+}
+                                /*  // ////////////////////////// //
+                                    //          FIN FOOTER        //
+                                    // ////////////////////////// //
+                                */
+
 /*
 /////////////////////////////////////////////////// FIN BODY ///////////////////////////////////////////////////
 */
