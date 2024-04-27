@@ -1,0 +1,280 @@
+
+/*FORMATEAMOS EL DOCUMENTO*/
+*{
+    padding: 0;
+    margin: 0;
+    
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+
+    cursor: url("../imagenes/cursor.png") 0 -15,auto;
+
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+a:focus{
+    outline: none;
+}
+
+/*
+    /////////////////////////////////////////////////// INICIO BODY ///////////////////////////////////////////////////
+*/
+
+
+
+/* Hacemos que todo el body funcione scrolleando */
+
+body::-webkit-scrollbar{
+    display: block;
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #f0f0f000;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 20px;
+}
+
+*::-webkit-scrollbar-thumb:hover { /* Al pasar el ratón por encima del scroll bar cambia de color*/
+    background-color: #837777;
+}
+
+/* FIN SCROLL BAR*/
+
+                                /*  // ///////////////////////////// //
+                                    //        INICIO HEADER          //
+                                    // ///////////////////////////// //
+                                */
+
+header{
+    background-image: url('../imagenes/cielo.jpg');
+    color: rgb(73, 60, 60);
+
+    background-size: cover;
+}
+
+/* // //////////////////////////////////////////// // */
+/* //        CABECERA = LOGO + FORMULARIO          // */
+/* // //////////////////////////////////////////// // */
+
+.cabecera{    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+/*
+    INICIO LOGO
+*/
+header .cabecera #logo{
+    height: auto;
+    width: 10em;
+    /* transition: 0.13; /*Lo usamos para que la transformación al pasar el cursos por encima no sea muy exagerada*/
+}
+
+header .cabecera #logo:hover{ /* Lo de hover se usa para que cuando pongamos el cursor encima, haga un efecto*/
+    transform: scale(1.1); /* Así agrandaremos el logo cuando pasemos por encima*/
+}
+
+/* FIN LOGO */
+
+/* INICIO INICIO SESIÓN */
+
+header .cabecera .InicioSesion{
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+    padding: 2%;
+}
+
+.InicioSesion #iniciar:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+header .cabecera .InicioSesion #registro:hover{
+    transform: scale(1.1);
+    text-decoration: dashed;
+    color:rgb(254, 203, 75);
+}
+
+/* FIN INICIO SESIÓN */
+
+/* // //////////////////// // */
+/* //       NAVEGADOR      // */
+/* // //////////////////// // */
+
+/*
+INICIO LINKS DE NAVEGACIÓN
+*/
+
+
+header .Navegador-Links{
+    list-style: none;
+    list-style-type: none;
+    
+    overflow: hidden;
+    background-color: #333;
+    text-align: center;
+}
+  
+header .Navegador-Links li{
+    display: inline-block; /* Toman el ancho necesario para almacenar el texto*/
+}
+  
+header .Navegador-Links li a{
+    font-size: 100%;
+    text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+
+    padding: 14px 16px;
+}
+
+header .Navegador-Links li a:not(.actual){
+    color: white;
+}
+  
+header .Navegador-Links li a:hover:not(.actual) {
+    color: rgb(112, 233, 233);
+    background-color: #111;
+    transform: scale(1.1); /*Cuando pasemos el cursos por encima, aumentan un poco su tamaño*/
+}
+
+header .Navegador-Links li .actual{
+    color: #111;
+    text-decoration: underline;
+    background-color: aquamarine;
+}
+
+header .Navegador-Links li .actual:hover{
+    transform: scale(1.1);
+}
+
+/*
+INICIO LINKS DE NAVEGACIÓN
+*/
+
+
+                                /*  // ////////////////////////// //
+                                    //        FIN HEADER          //
+                                    // ////////////////////////// //
+                                */
+
+                                /*  // /////////////////////////// //
+                                    //        INICIO MAIN          //
+                                    // /////////////////////////// //
+                                */
+
+
+                                /*  // //////////////////////// //
+                                    //        FIN MAIN          //
+                                    // //////////////////////// //
+                                */
+
+                                /*  // ///////////////////////////// //
+                                    //          INICIO FOOTER        //
+                                    // ///////////////////////////// //
+                                */
+
+
+footer{
+    background-color: rgb(112, 233, 233);
+    color: rgb(0, 0, 0);
+
+    text-decoration: none;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    
+}
+
+
+
+                                /*  // ////////////////////////// //
+                                    //          FIN FOOTER        //
+                                    // ////////////////////////// //
+                                */
+
+/*
+/////////////////////////////////////////////////// FIN BODY ///////////////////////////////////////////////////
+*/
+
+/* Diseño Responsive */
+
+@media (max-width: 1024px) {
+
+    header .cabecera {
+        display: flex;
+        flex-direction: row;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+    
+    header .cabecera .InicioSesion {
+        display: flex;
+        flex-direction: column;
+        padding: 4%;
+    }
+
+    header .Navegador{
+      flex-direction: column;
+    }
+  
+    .enlace-nav {
+      text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+
+    header .cabecera {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    header .cabecera .InicioSesion{
+        padding: 4%;
+    }
+
+    footer{
+        background-color: rgb(112, 233, 233);
+        color: rgb(0, 0, 0);
+
+        text-decoration: none;
+        
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+        padding: 3%;
+    }
+
+    footer a:hover{
+        transform: scale(1.2);
+    }
+
+}

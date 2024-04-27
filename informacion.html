@@ -4,8 +4,8 @@
     <head>
         <title>Museo Mojang</title>
         <meta charset="utf-8"/>
-        <link rel = "stylesheet" type = "text/css" href="base.css"/>
-        <link rel = "stylesheet" type = "text/css" href="indice.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/informacio.css"/>
 
         <meta name="viewport" content="width=device-width">
 
@@ -14,25 +14,22 @@
     <body>
 
         <header>
-            <!-- Usamos una clase ContenedorLogo que contendrá el Logo del museo-->
-            <section class="ContenedorLogo">
-                <img src="imagenes/Logo.png" id="logo">
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            <section class="cabecera">
+                <img src="imagenes/Logo.png" id="logo" alt="logo">
             </section>
 
             <!-- Sección que corresponderá con el menú de navegación-->
-            <section class="Navegador">
-                <nav>
+                <nav class="Navegador">
                     <ul class="Navegador-Links">
-                        <li><a href="index.html">Página principal</a></li>
-                        <li><a href="coleccion.html">Colección</a></li>
-                        <li><a href="visita.html">Visita</a></li>
-                        <li><a href="exposiciones.html">Exposiciones</a></li>
-                        <li><a class="actual" href="informacion.html">Información</a></li>
-                        <li><a href="experiencias.html">Experiencias</a></li>
+                        <li><a class="enlace-nav " href="index.html">Página principal</a></li>
+                        <li><a class="enlace-nav" href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="visita.html">Visita</a></li>
+                        <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav actual" href="informacion.html">Información</a></li>
+                        <li><a class="enlace-nav" href="experiencias.html">Experiencias</a></li>
                     </ul>
                 </nav>
-            </section>
-
 
         </header>
 
@@ -44,8 +41,8 @@
         </main>
         
         <footer>
-            <p> <a href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a></p>
-            <p> <a href="pie_pagina/contacto.html">Contacto</a></p>
+            <a class="comosehizo" href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a>
+            <a class="contact" href="pie_pagina/contacto.html">Contacto</a>
             <p>Derechos de autor © 2024 Museo Mojang.</p>
         </footer>
     </body>

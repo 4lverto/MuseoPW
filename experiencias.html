@@ -4,8 +4,8 @@
     <head>
         <title>Museo Mojang</title>
         <meta charset="utf-8"/>
-        <link rel = "stylesheet" type = "text/css" href="base.css"/>
-        <link rel = "stylesheet" type = "text/css" href="indice.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/experiencias.css"/>
 
         <meta name="viewport" content="width=device-width">
 
@@ -14,37 +14,276 @@
     <body>
 
         <header>
-            <!-- Usamos una clase ContenedorLogo que contendrá el Logo del museo-->
-            <section class="ContenedorLogo">
-                <img src="imagenes/Logo.png" id="logo">
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            <section class="cabecera">
+                <img src="imagenes/Logo.png" id="logo" alt="logo">
+
             </section>
 
             <!-- Sección que corresponderá con el menú de navegación-->
-            <section class="Navegador">
-                <nav>
+                <nav class="Navegador">
                     <ul class="Navegador-Links">
-                        <li><a href="index.html">Página principal</a></li>
-                        <li><a href="coleccion.html">Colección</a></li>
-                        <li><a href="visita.html">Visita</a></li>
-                        <li><a href="exposiciones.html">Exposiciones</a></li>
-                        <li><a href="informacion.html">Información</a></li>
-                        <li><a class="actual" href="experiencias.html">Experiencias</a></li>
+                        <li><a class="enlace-nav " href="index.html">Página principal</a></li>
+                        <li><a class="enlace-nav" href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="visita.html">Visita</a></li>
+                        <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav" href="informacion.html">Información</a></li>
+                        <li><a class="enlace-nav actual" href="experiencias.html">Experiencias</a></li>
                     </ul>
                 </nav>
-            </section>
-            
+
         </header>
 
         <main>
 
-            <h1> MUSEO MOJANG</h1>
+            <h1> EXPERIENCIAS DE NUESTROS USUARIOS </h1>
+            <section class="contenedor-principal">
+                                    
+                    <!-- Sección donde se encontrarán todas las experiencias-->
+                    <section class="contenedor-experiencias">
 
+                        <!-- Representará el contenido total de una opinión de un usuario -->
+                        <section class="opinion">
+
+                            <section class="valoracion">
+                                
+                                <!-- Datos del usuario-->
+                                <article class="usuario">
+                                    <img src="imagenes/hombre.png" alt="hombre">
+                                    <p> Alberto </p>
+                                    
+                                </article>
+
+                                <!-- Fecha de realización de la valoración-->
+                                <article class="fecha">
+                                    <p> 24/03/2024</p>
+
+                                </article>
+
+                                <!-- Puntuación de la valoración-->
+                                <article class="puntuacion">
+                                    <p> 2/5</p>
+                                </article>
+                            
+                            </section>
+
+                            <!-- Comentario dejado por el usuario-->
+                            <section class="comentario">
+                                <article class="comentario">
+                                    <p> He de decir que me ha encantado esta visita al museo</p>
+                                </article>
+                            </section>
+
+                        </section>
+
+                        <section class="opinion">
+
+                            <section class="valoracion">
+                                
+                                <!-- Datos del usuario-->
+                                <article class="usuario">
+                                    <img src="imagenes/mujer.png" alt="hombre">
+                                    <p> Maria </p>
+                                    
+                                </article>
+
+                                <!-- Fecha de realización de la valoración-->
+                                <article class="fecha">
+                                    <p> 21/03/2024</p>
+
+                                </article>
+
+                                <!-- Puntuación de la valoración-->
+                                <article class="puntuacion">
+                                    <p> 2/5</p>
+                                </article>
+                            
+                            </section>
+
+                            <!-- Comentario dejado por el usuario-->
+                            <section class="comentario">
+                                <article class="comentario">
+                                    <p> La exposición sobre el infierno ha sido muy desagradable. No repetiré la visita. </p>
+                                </article>
+                            </section>
+
+                        </section>
+
+                        <!-- Representará el contenido total de una opinión de un usuario -->
+                        <section class="opinion">
+
+                            <section class="valoracion">
+                                
+                                <!-- Datos del usuario-->
+                                <article class="usuario">
+                                    <img src="imagenes/hombre.png" alt="hombre">
+                                    <p> Bruno </p>
+                                    
+                                </article>
+
+                                <!-- Fecha de realización de la valoración-->
+                                <article class="fecha">
+                                    <p> 09/04/2020</p>
+
+                                </article>
+
+                                <!-- Puntuación de la valoración-->
+                                <article class="puntuacion">
+                                    <p> 4/5</p>
+                                </article>
+                            
+                            </section>
+
+                            <!-- Comentario dejado por el usuario-->
+                            <section class="comentario">
+                                <article class="comentario">
+                                    <p> La colección de cuadros de construcciones ha merecido mucho la pena </p>
+                                </article>
+                            </section>
+
+                        </section>
+
+                        <section class="opinion">
+
+                            <section class="valoracion">
+                                
+                                <!-- Datos del usuario-->
+                                <article class="usuario">
+                                    <img src="imagenes/mujer.png" alt="hombre">
+                                    <p> Marta </p>
+                                    
+                                </article>
+
+                                <!-- Fecha de realización de la valoración-->
+                                <article class="fecha">
+                                    <p> 24/03/2024</p>
+
+                                </article>
+
+                                <!-- Puntuación de la valoración-->
+                                <article class="puntuacion">
+                                    <p> 5/5</p>
+                                </article>
+                            
+                            </section>
+
+                            <!-- Comentario dejado por el usuario-->
+                            <section class="comentario">
+                                <article class="comentario">
+                                    <p> He de decir que me ha encantado esta visita al museo</p>
+                                </article>
+                            </section>
+
+                        </section>
+
+                        <!-- Representará el contenido total de una opinión de un usuario -->
+                        <section class="opinion">
+
+                            <section class="valoracion">
+                                
+                                <!-- Datos del usuario-->
+                                <article class="usuario">
+                                    <img src="imagenes/hombre.png" alt="hombre">
+                                    <p> Ramón </p>
+                                    
+                                </article>
+
+                                <!-- Fecha de realización de la valoración-->
+                                <article class="fecha">
+                                    <p> 24/03/2024</p>
+
+                                </article>
+
+                                <!-- Puntuación de la valoración-->
+                                <article class="puntuacion">
+                                    <p> 0/5</p>
+                                </article>
+                            
+                            </section>
+
+                            <!-- Comentario dejado por el usuario-->
+                            <section class="comentario">
+                                <article class="comentario">
+                                    <p> La exposición sobre el infierno ha sido muy desagradable. No repetiré la visita. </p>
+                                </article>
+                            </section>
+
+                        </section>
+
+                        <section class="opinion">
+
+                            <section class="valoracion">
+                                
+                                <!-- Datos del usuario-->
+                                <article class="usuario">
+                                    <img src="imagenes/mujer.png" alt="hombre">
+                                    <p> Encarni </p>
+                                    
+                                </article>
+
+                                <!-- Fecha de realización de la valoración-->
+                                <article class="fecha">
+                                    <p> 24/03/2024</p>
+
+                                </article>
+
+                                <!-- Puntuación de la valoración-->
+                                <article class="puntuacion">
+                                    <p> 3/5</p>
+                                </article>
+                            
+                            </section>
+
+                            <!-- Comentario dejado por el usuario-->
+                            <section class="comentario">
+                                <article class="comentario">
+                                    <p> La colección de cuadros de construcciones ha merecido mucho la pena </p>
+                                </article>
+                            </section>
+
+                        </section>
+                    
+                    </section>
+
+                    <!-- Formulario para dejar una experiencia-->
+                    <section class="contenedor-formulario">
+
+                        <h2> ¿Quieres dejar una reseña? </h2>
+
+                        <form action="#">
+
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Alberto" required><br><br>
+                            
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="albertoov@correo.ugr.es"required> <br><br>
+
+                            <label for="valoracion:">Valoración de la experiencia:</label>
+                            <select id="valoracion" name="estrella">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select> <br> <br>
+
+                            <label for="comentarios">Comentarios:</label><br>
+                            <textarea id="comentarios" name="comentarios" rows="4" cols="50"></textarea><br><br>
+                            
+                            <input type="submit" id="enviar-valoracion" value="Realizar Valoracion">
+                        </form>
+
+                    </section>
+
+                </section>
+            </section>
 
         </main>
         
         <footer>
-            <p> <a href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a></p>
-            <p> <a href="pie_pagina/contacto.html">Contacto</a></p>
+            <a class="comosehizo" href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a>
+            <a class="contact" href="pie_pagina/contacto.html">Contacto</a>
             <p>Derechos de autor © 2024 Museo Mojang.</p>
         </footer>
     </body>

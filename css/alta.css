@@ -1,0 +1,83 @@
+*{
+    padding: 0;
+    margin: 0;
+
+    box-sizing: border-box;
+    
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    cursor: url("imagenes/cursor.png") 0 -15,auto;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-size: cover;
+    background-position: auto;
+    background-size: cover;
+}
+
+header{
+
+    max-width: 100%;
+
+    color: rgb(73, 60, 60);
+    
+    display: block; /* Elementos que toman todo el ancho disponible y generan una nueva línea*/
+    
+    justify-content: space-between;
+    
+    text-align: center;
+    align-items: center;
+
+    padding: 3%;
+}
+
+main{
+
+    background-color: rgb(124, 164, 199);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+
+    text-align: center;
+    align-items: center;
+}
+
+main .volver{
+    grid-column: 1/3;
+
+    display: flex;
+    flex-direction: column;
+}
+
+main .Formularios{
+    background-color: rgba(56, 64, 71, 0.34);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    grid-column: 2/5;
+}
+
+
+footer {
+    background-color: rgb(112, 233, 233);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    
+    text-align: center;
+
+    
+    padding: 1%;
+    
+    bottom: 0; /*Para indicarle que va abajo*/
+    width: 100% /*Para que rellene toda la página en horizontal*/;
+}
+
+footer a:hover{
+    transform: scale(1.2);
+}

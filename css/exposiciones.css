@@ -1,0 +1,81 @@
+body,html{
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    display: block;
+    background-color: rgb(119, 169, 212);
+    height: auto;
+
+    overflow-y: scroll;
+}
+
+main h1{
+    font-size: 3em;
+    text-align: center;
+    padding: 2%;
+
+    text-decoration: underline;
+}
+
+/* EXPOSICIONES */
+
+/* Contenedor de todas las exposiciones del museo */
+main .contenedor-exposiciones{
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    text-align: center;
+}
+
+/* Representará cada una de las exposiciones del museo */
+main .contenedor-exposiciones .exposicion{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5%;
+    align-items: center;
+}
+
+/* Representará el conjunto de 5 imagenes (2 a cada lado, y la principal)*/
+main .contenedor-exposiciones .exposicion .imagenes{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-around;
+}
+
+/* BLOQUE IMAGEN PRINCIPAL*/
+main .contenedor-exposiciones .exposicion .principal{
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+    padding-bottom: 1%;
+}
+
+/* La imagen grande */
+main .grande{
+    height: auto;
+}
+
+/* BLOQUE IMÁGENES DE ALREDEDOR */
+main .contenedor-exposiciones .exposicion .imagenes .alrededor{
+    display: flex;
+    flex-direction: column;
+
+    width: 20%;
+}
+
+main .pequeña{
+    width: 100%;
+    height: auto;
+    padding: 2%;
+}
+
+main .contenedor-exposiciones .exposicion .descripcion h2{
+    text-decoration: overline;
+    padding-bottom: 2%;
+}

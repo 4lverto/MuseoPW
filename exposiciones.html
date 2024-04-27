@@ -4,8 +4,8 @@
     <head>
         <title>Museo Mojang</title>
         <meta charset="utf-8"/>
-        <link rel = "stylesheet" type = "text/css" href="base.css"/>
-        <link rel = "stylesheet" type = "text/css" href="indice.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/exposiciones.css"/>
 
         <meta name="viewport" content="width=device-width">
 
@@ -14,37 +14,120 @@
     <body>
 
         <header>
-            <!-- Usamos una clase ContenedorLogo que contendrá el Logo del museo-->
-            <section class="ContenedorLogo">
-                <img src="imagenes/Logo.png" ref="index.html" id="logo">
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            <section class="cabecera">
+                <img src="imagenes/Logo.png" id="logo" alt="logo">
             </section>
 
             <!-- Sección que corresponderá con el menú de navegación-->
-            <section class="Navegador">
-                <nav>
+                <nav class="Navegador">
                     <ul class="Navegador-Links">
-                        <li><a href="index.html">Página principal</a></li>
-                        <li><a href="coleccion.html">Colección</a></li>
-                        <li><a href="visita.html">Visita</a></li>
-                        <li><a class="actual" href="exposiciones.html">Exposiciones</a></li>
-                        <li><a href="informacion.html">Información</a></li>
-                        <li><a href="experiencias.html">Experiencias</a></li>
+                        <li><a class="enlace-nav " href="index.html">Página principal</a></li>
+                        <li><a class="enlace-nav " href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="visita.html">Visita</a></li>
+                        <li><a class="enlace-nav actual" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav" href="informacion.html">Información</a></li>
+                        <li><a class="enlace-nav" href="experiencias.html">Experiencias</a></li>
                     </ul>
                 </nav>
-            </section>
 
         </header>
 
         <main>
 
-            <h1> MUSEO MOJANG</h1>
+            <h1> EXPOSICIONES ACTIVAS </h1>
+
+            <section class="contenedor-exposiciones">
+
+                <section class="exposicion">
+                        
+                    <section class="imagenes">
+                        <section class="alrededor">
+                                <img src="./imagenes/oceano.PNG" alt="oceano" class="pequeña">
+                                <img src="./imagenes/oceano.PNG" alt="oceano" class="pequeña">
+                        </section>
+
+                        <section class="principal">
+                            <img src="./imagenes/oceano.PNG" alt="oceano" class="grande">     
+                        </section>
+                        
+                        <section class="alrededor">
+                            <img src="./imagenes/oceano.PNG" alt="oceano" class="pequeña">
+                            <img src="./imagenes/oceano.PNG" alt="oceano" class="pequeña">
+                        </section>
+                    </section>
+
+                    <section class="descripcion">
+                        <h2> Tortugas y Algas </h2>
+
+                        <p> Exposición sobre la fauna y flora </p>
+                        <p> que puede ser encontrada en la inmensidad</p>
+                        <p> del océano. </p>
+                    </section>
+
+                </section>
+
+                <section class="exposicion">
+                    
+                    <section class="imagenes">
+                        <section class="alrededor">
+                                <img src="./obras_fotos/FaunaYFlora6.png" alt="oceano" class="pequeña">
+                                <img src="./obras_fotos/FaunaYFlora6.png" alt="oceano" class="pequeña">
+                        </section>
+
+                        <section class="principal">
+                            <img src="./obras_fotos/FaunaYFlora6.png" alt="oceano" class="grande">     
+                        </section>
+                        
+                        <section class="alrededor">
+                            <img src="./obras_fotos/FaunaYFlora6.png" alt="oceano" class="pequeña">
+                            <img src="./obras_fotos/FaunaYFlora6.png" alt="oceano" class="pequeña">
+                        </section>
+                    </section>
+
+                    <section class="descripcion">
+                        <h2> Animales extraños y dónde encontrarlos </h2>
+
+                        <p> Exposición sobre los animales más extraordinarios </p>
+                        <p> y más difíciles de encontrar en cautividad</p>
+                    </section>
+
+                </section>
+
+                <section class="exposicion">
+                        
+                    <section class="imagenes">
+                        <section class="alrededor">
+                                <img src="./obras_fotos/FaunaYFlora4.jpg" alt="oceano" class="pequeña">
+                                <img src="./obras_fotos/FaunaYFlora4.jpg" alt="oceano" class="pequeña">
+                        </section>
+
+                        <section class="principal">
+                            <img src="./obras_fotos/FaunaYFlora4.jpg" alt="oceano" class="grande">     
+                        </section>
+                        
+                        <section class="alrededor">
+                            <img src="./obras_fotos/FaunaYFlora4.jpg" alt="oceano" class="pequeña">
+                            <img src="./obras_fotos/FaunaYFlora4.jpg" alt="oceano" class="pequeña">
+                        </section>
+                    </section>
+
+                    <section class="descripcion">
+                        <h2> Visita al infierno </h2>
+
+                        <p> Exposición sobre los mitos y leyendas </p>
+                        <p> más escalofriantes relacionados</p>
+                        <p> con el mundo de ultratumba </p>
+                    </section>
+
+                </section>
 
 
         </main>
         
         <footer>
-            <p> <a href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a></p>
-            <p> <a href="pie_pagina/contacto.html">Contacto</a></p>
+            <a class="comosehizo" href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a>
+            <a class="contact" href="pie_pagina/contacto.html">Contacto</a>
             <p>Derechos de autor © 2024 Museo Mojang.</p>
         </footer>
     </body>
