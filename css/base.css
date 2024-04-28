@@ -206,31 +206,6 @@ footer{
 
 /* Diseño Responsive */
 
-@media (max-width: 1024px) {
-
-    header .cabecera {
-        display: flex;
-        flex-direction: row;
-        height: auto;
-        text-align: center;
-        align-items: center;
-    }
-    
-    header .cabecera .InicioSesion {
-        display: flex;
-        flex-direction: column;
-        padding: 4%;
-    }
-
-    header .Navegador{
-      flex-direction: column;
-    }
-  
-    .enlace-nav {
-      text-align: center;
-    }
-}
-
 @media (max-width: 480px) {
 
     header .cabecera {
@@ -243,24 +218,6 @@ footer{
 
     header .cabecera .InicioSesion{
         padding: 4%;
-    }
-
-    footer{
-        background-color: rgb(112, 233, 233);
-        color: rgb(0, 0, 0);
-
-        text-decoration: none;
-        
-        display: flex;
-        flex-direction: column;
-
-        justify-content: center;
-        align-items: center;
-        padding: 3%;
-    }
-
-    footer a:hover{
-        transform: scale(1.2);
     }
 
 }

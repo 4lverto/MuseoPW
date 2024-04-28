@@ -289,25 +289,17 @@ main .contenedor-filtros{
       flex-direction: column;
     }
 
-    main .contenedor-filtros .filtrar-obras{
-      font-size: 2em;
-    }
-
     main .contenedor-filtros .cada-filtro{
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 1fr 1fr;
-
-      color: #5b0808;
-      text-align: center;
     }  
   }
 
   /* MÓVILES */
   @media (max-width: 480px) {
     
-
-  /* MENÚ FILTRADO*/
+  /* TITULO MENÚ FILTRADO*/
   .contenedor-filtros .filtrar-obras{
     content-visibility: hidden;
   }
@@ -318,10 +310,6 @@ main .contenedor-filtros{
     display: flex;
     flex-direction: column;
     padding: 1%;
-  }
-
-  .contenedor-principal h2{
-    font-size: 2em;
   }
 
   .contenedor-principal .filas-con-obras{

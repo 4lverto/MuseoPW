@@ -61,7 +61,7 @@ main .Presentacion{
 
 /* RESPONSIVE */
 
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
     main .Presentacion{
         grid-column: 1/6;
     }

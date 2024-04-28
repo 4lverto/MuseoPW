@@ -1,5 +1,6 @@
 main{
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: rgb(119, 169, 212);
     height: auto;
 }
