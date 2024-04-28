@@ -1,4 +1,6 @@
 
+/* INICIO HEADER */
+
 header .bienvenida{
     padding-top: 2%;
     text-align: center;
@@ -9,6 +11,10 @@ header .bienvenida{
 header .InicioSesion{
     content-visibility: hidden;
 }
+
+/* FIN HEADER */
+
+/* INICIO MAIN */
 
 main{
     background-color: rgb(124, 164, 199);
@@ -42,3 +48,5 @@ main .Formularios{
 .boton-volver:hover{
     transform: scale(1.5);
 }
+
+/* FIN MAIN */

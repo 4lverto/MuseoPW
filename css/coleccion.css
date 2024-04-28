@@ -1,10 +1,3 @@
-body,html{
-    background-repeat: no-repeat;
-    background-position-x: center;
-    background-size: cover;
-    scroll-behavior: smooth;
-}
-
 main{  
     display: grid;;
     
@@ -154,7 +147,7 @@ main .contenedor-filtros{
   }
 
   .contenedor-principal h2{
-    font-size: 4rem;
+    font-size: 4em;
 
     color: black;
     text-decoration: underline;

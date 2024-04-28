@@ -9,9 +9,10 @@ main .contenedor-visita{
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; /* 5 columnas*/
-    grid-template-rows: .2fr 1fr 1fr .15fr 1fr; /*6 filas*/
+    grid-template-rows: .2fr 1fr 1fr .15fr .7fr; /*6 filas*/
 }
 
+/* CONTENEDOR VISITA */
 
 .contenedor-visita .presentacion{
 
@@ -34,7 +35,8 @@ main .contenedor-visita{
     padding-bottom: 2%;
 }
 
-/* Leyenda plano */
+/* LEYENDA plano */
+
 .contenedor-visita .leyenda{
     grid-column: 5/7;
     grid-row: 2/3;
@@ -155,3 +157,4 @@ main .contenedor-visita{
 .contenedor-salas .texto{
     font-size: 1.5em;
 }
+

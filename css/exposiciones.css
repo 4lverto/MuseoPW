@@ -1,14 +1,7 @@
-body,html{
-    padding: 0;
-    margin: 0;
-}
-
 main{
     display: block;
     background-color: rgb(119, 169, 212);
     height: auto;
-
-    overflow-y: scroll;
 }
 
 main h1{

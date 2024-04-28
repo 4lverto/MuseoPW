@@ -1,56 +1,40 @@
-
 /*FORMATEAMOS EL DOCUMENTO*/
 *{
     padding: 0;
     margin: 0;
     
-    text-decoration: none;
-    list-style: none;
-
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     
     cursor: url("../imagenes/cursor.png") 0 -15,auto;
 
     box-sizing: border-box;
+
+    list-style-type: none; 
 }
 
-html{
-    scroll-behavior: smooth;
-}
-
-a:focus{
-    outline: none;
-}
-
-
+/* Eliminamos los puntos que se muestran por defecto en una lista*/
 
 /*
     /////////////////////////////////////////////////// INICIO BODY ///////////////////////////////////////////////////
 */
 
+/* Hacemos que todo el documento funcione scrolleando */
 
-
-/* Hacemos que todo el body funcione scrolleando */
-
-body::-webkit-scrollbar{
-    display: block;
-}
-
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 10px;
 }
 
-*::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: #f0f0f000;
 }
 
-*::-webkit-scrollbar-thumb {
+body::-webkit-scrollbar-thumb {
     background-color: #888;
     border-radius: 20px;
 }
 
-*::-webkit-scrollbar-thumb:hover { /* Al pasar el ratón por encima del scroll bar cambia de color*/
-    background-color: #837777;
+body::-webkit-scrollbar-thumb:hover { /* Al pasar el ratón por encima del scroll bar cambia de color*/
+    background-color: #a86565;
 }
 
 /* FIN SCROLL BAR*/
@@ -95,16 +79,16 @@ header .cabecera #logo:hover{ /* Lo de hover se usa para que cuando pongamos el 
 
 @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    10% { transform: translate(-1px, -2px) rotate(-2deg); }
+    20% { transform: translate(-3px, 0px) rotate(2deg); }
     30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    40% { transform: translate(1px, -1px) rotate(2deg); }
+    50% { transform: translate(-1px, 2px) rotate(-2deg); }
     60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    70% { transform: translate(3px, 1px) rotate(-2deg); }
+    80% { transform: translate(-1px, -1px) rotate(2deg); }
     90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
+    100% { transform: translate(1px, -2px) rotate(-2deg); }
   }
 
 /* FIN LOGO */
@@ -140,11 +124,7 @@ INICIO LINKS DE NAVEGACIÓN
 */
 
 
-header .Navegador-Links{
-    list-style: none;
-    list-style-type: none;
-    
-    overflow: hidden;
+header .Navegador-Links{    
     background-color: #333;
     text-align: center;
 }
@@ -159,7 +139,6 @@ header .Navegador-Links li a{
 
     display: inline-block;
     text-align: center;
-
     padding: 14px 16px;
 }
 
