@@ -30,7 +30,8 @@ main .contenedor-visita{
     width: 100%;
     height: auto;
     object-fit: cover;
-    padding-bottom: 3%;
+
+    padding-bottom: 2%;
 }
 
 /* Leyenda plano */
@@ -47,6 +48,10 @@ main .contenedor-visita{
 .leyenda h2{
     padding: 5%;
     text-decoration: overline;
+}
+
+.leyenda ul li a{
+    font-size: 1.5em;
 }
 
 .aqui{
@@ -77,13 +82,11 @@ main .contenedor-visita{
 /* Fin de la leyenda */
 
 .contenedor-visita .contenedor-salas{
-
     grid-column: 1/6;
     grid-row: 5/6;
 }
 
 .contenedor-visita .encontraras{
-        
     grid-row: 4/5;
     grid-column: 2/5;
 

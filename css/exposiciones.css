@@ -57,8 +57,14 @@ main .contenedor-exposiciones .exposicion .principal{
 }
 
 /* La imagen grande */
-main .grande{
+main .grande,.pequeña{
     height: auto;
+    
+    transition: 0.5s;
+}
+
+main .grande:hover,.pequeña:hover{
+    transform: scale(1.1);
 }
 
 /* BLOQUE IMÁGENES DE ALREDEDOR */
@@ -66,16 +72,20 @@ main .contenedor-exposiciones .exposicion .imagenes .alrededor{
     display: flex;
     flex-direction: column;
 
-    width: 20%;
+    width: 21%;
 }
 
 main .pequeña{
     width: 100%;
     height: auto;
-    padding: 2%;
+    padding: 1%;
 }
 
 main .contenedor-exposiciones .exposicion .descripcion h2{
     text-decoration: overline;
     padding-bottom: 2%;
+}
+
+.autor{
+    font-style: italic;
 }

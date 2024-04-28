@@ -1,44 +1,16 @@
-*{
-    padding: 0;
-    margin: 0;
 
-    box-sizing: border-box;
-    
-    text-decoration: none;
-    list-style: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
-    cursor: url("imagenes/cursor.png") 0 -15,auto;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-body{
-    background-size: cover;
-    background-position: auto;
-    background-size: cover;
-}
-
-header{
-
-    max-width: 100%;
-
-    color: rgb(73, 60, 60);
-    
-    display: block; /* Elementos que toman todo el ancho disponible y generan una nueva línea*/
-    
-    justify-content: space-between;
-    
+header .bienvenida{
+    padding-top: 2%;
     text-align: center;
-    align-items: center;
 
-    padding: 3%;
+    font-size: 2em;
+}
+
+header .InicioSesion{
+    content-visibility: hidden;
 }
 
 main{
-
     background-color: rgb(124, 164, 199);
 
     display: grid;
@@ -63,21 +35,10 @@ main .Formularios{
     grid-column: 2/5;
 }
 
-
-footer {
-    background-color: rgb(112, 233, 233);
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    
-    text-align: center;
-
-    
-    padding: 1%;
-    
-    bottom: 0; /*Para indicarle que va abajo*/
-    width: 100% /*Para que rellene toda la página en horizontal*/;
+.boton-volver{
+    transition: 0.5s;
 }
 
-footer a:hover{
-    transform: scale(1.2);
+.boton-volver:hover{
+    transform: scale(1.5);
 }

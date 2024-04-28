@@ -5,16 +5,54 @@
         <title>Alta de Usuario</title>
         <meta charset="utf-8"/>
         
-        <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
         <link rel = "stylesheet" type = "text/css" href="css/alta.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
         
     </head>
 
     <body>
 
         <header>
-            <h1> Bienvenido al Museo Mojang</h1>
-            <p> Para darte de alta, completa el siguiente formulario:</p>
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            
+            <section class="cabecera">
+                <a href="index.html"><img src="imagenes/Logo.png" id="logo" alt="logo" class="logo"> </a>
+
+
+                <section class="bienvenida">
+                    <h3> Bienvenid@ al Museo Mojang</h3>
+                    <p> Para darte de alta como usuario, completa el formulario</p>
+                </section> 
+
+                <!-- Usamos una clase InicioSesion que contendrá el formulario de inicio de sesión-->
+                <section class="InicioSesion">
+                    <form>
+                        <label for="Correo">Correo electrónico: </label><br>
+                        <input type="text" id="Correo" name="Correo" placeholder="ejemplo@gmail.com"><br>
+
+                        <label for="Contraseña">Contraseña: </label><br>
+                        <input type="password" id="Contraseña" name="Contraseña"><br>
+
+                        <input type="submit" id="iniciar" value="Iniciar Sesión"><br>
+                    </form>
+
+                    <a href="alta_usuario.html" id="registro">Registrarse</a>
+                </section>
+            </section>
+
+            <!-- Sección que corresponderá con el menú de navegación-->
+            <section class="nav-container">
+                <nav class="Navegador">
+                    <ul class="Navegador-Links">
+                        <li><a class="enlace-nav" href="index.html">Página principal</a></li>
+                        <li><a class="enlace-nav" href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="visita.html">Visita</a></li>
+                        <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav" href="informacion.html">Información</a></li>
+                        <li><a class="enlace-nav" href="experiencias.html">Experiencias</a></li>
+                    </ul>
+                </nav>
+            </section>
 
         </header>
 

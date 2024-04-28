@@ -1,16 +1,9 @@
-*{
-    padding: 0;
-    margin: 0;
-}
-
 main{
     width: 100%;
     display: flex;
     flex-direction: column;
     background-color: rgb(119, 169, 212);
-    height: 100em;
-
-    overflow-y: auto;
+    height: auto;
 }
 
 main::-webkit-scrollbar{
@@ -126,4 +119,14 @@ main .obras-relacionadas .relacion .foto-obra{
 
     width: 75%;
     height: auto;
+
+    transition: 0.5s;
+}
+
+.foto-obra:hover{
+    transform: scale(1.1);
+}
+
+.autor{
+    font-style: italic;
 }

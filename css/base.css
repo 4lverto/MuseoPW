@@ -6,8 +6,9 @@
     
     text-decoration: none;
     list-style: none;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
     cursor: url("../imagenes/cursor.png") 0 -15,auto;
 
     box-sizing: border-box;
@@ -20,6 +21,8 @@ html{
 a:focus{
     outline: none;
 }
+
+
 
 /*
     /////////////////////////////////////////////////// INICIO BODY ///////////////////////////////////////////////////
@@ -62,6 +65,7 @@ header{
     color: rgb(73, 60, 60);
 
     background-size: cover;
+    background-position-x:center ;
 }
 
 /* // //////////////////////////////////////////// // */
@@ -85,8 +89,23 @@ header .cabecera #logo{
 }
 
 header .cabecera #logo:hover{ /* Lo de hover se usa para que cuando pongamos el cursor encima, haga un efecto*/
-    transform: scale(1.1); /* Así agrandaremos el logo cuando pasemos por encima*/
+    animation: shake 0.5s; /* Así agrandaremos el logo cuando pasemos por encima*/
+    animation-iteration-count: infinite;
 }
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
 
 /* FIN LOGO */
 
@@ -107,7 +126,6 @@ header .cabecera .InicioSesion{
 
 header .cabecera .InicioSesion #registro:hover{
     transform: scale(1.1);
-    text-decoration: dashed;
     color:rgb(254, 203, 75);
 }
 
@@ -173,17 +191,6 @@ INICIO LINKS DE NAVEGACIÓN
                                 /*  // ////////////////////////// //
                                     //        FIN HEADER          //
                                     // ////////////////////////// //
-                                */
-
-                                /*  // /////////////////////////// //
-                                    //        INICIO MAIN          //
-                                    // /////////////////////////// //
-                                */
-
-
-                                /*  // //////////////////////// //
-                                    //        FIN MAIN          //
-                                    // //////////////////////// //
                                 */
 
                                 /*  // ///////////////////////////// //

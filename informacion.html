@@ -5,7 +5,7 @@
         <title>Museo Mojang</title>
         <meta charset="utf-8"/>
         <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
-        <link rel = "stylesheet" type = "text/css" href="css/informacio.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/informacion.css"/>
 
         <meta name="viewport" content="width=device-width">
 
@@ -16,7 +16,7 @@
         <header>
             <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
             <section class="cabecera">
-                <img src="imagenes/Logo.png" id="logo" alt="logo">
+                <a href="index.html"><img src="imagenes/Logo.png" id="logo" alt="logo" class="logo"> </a>
             </section>
 
             <!-- Sección que corresponderá con el menú de navegación-->
@@ -35,9 +35,252 @@
 
         <main>
 
-            <h1> MUSEO MOJANG</h1>
+            <!-- HORARIO -->
+            <section class="contenedor-horario">
+                <h1> HORARIO APERTURA </h1>
 
+                <article class="semana">
+                    <h6>LUNES - VIERNES </h6>
+                    <section class="lunes-viernes">
+                        <p>9:30 a 13:30</p>
+                        <p>17:00 a 20:30</p>
+                    </section >
+                </article>
 
+                <article class="finde">
+                    <h6> SÁBADOS </h6>
+                    <p> 9:30 a 13:30</p>
+                </article>
+            </section>
+
+            <!-- LEYENDA -->
+            <section class="contenedor-leyenda">
+                <p class="completa"> Abierto todo el día </p>
+                <p class="solo-mañanas"> Abierto por las mañanas</p>
+                <p class="cierre"> Cerrado todo el día </p>
+
+            </section>
+
+            <!-- PRECIOS -->
+            <section class="contenedor-precios">
+                <h3>PRECIO DE ENTRADA</h3>
+
+                <ul>
+                    <li> <a> Censados en Granada -> GRATIS </a></li>
+                    <li> <a> Menores de 9 años -> 5€ </a></li>
+                    <li> <a> Menores de 18 años -> 7€ </a></li>
+                    <li> <a> Censados en Granada -> GRATIS </a></li>
+                    <li> <a> Censados en Granada -> GRATIS </a></li>
+                </ul>
+
+            </section>
+            
+            <!-- CALENDARIOS -->
+            <section class="contenedor-calendarios">
+                
+                <h5> CALENDARIO TRIMESTRAL</h5>
+                <!-- CALENDARIO ABRIL -->
+                <section class="meses">
+
+                    <article class="mes">
+                        <p> ABRIL </p>
+                        <table class="cada-mes">
+                            <tr class="dias-semana">
+                                <th> L </th>
+                                <th> M </th>
+                                <th> X </th>
+                                <th> J </th>
+                                <th> V</th>
+                                <th> S </th>
+                                <th > D </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa">1</th>
+                                <th class="completa">2</th>
+                                <th class="completa">3</th>
+                                <th class="completa">4</th>
+                                <th class="completa">5</th>
+                                <th class="solo-mañanas">6</th>
+                                <th class="cierre">7</th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa">8</th>
+                                <th class="completa">9</th>
+                                <th class="cierre">10</th>
+                                <th class="completa">11</th>
+                                <th class="completa">12</th>
+                                <th class="solo-mañanas">13</th>
+                                <th class="cierre">14</th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa">15</th>
+                                <th class="completa">16</th>
+                                <th class="completa">17</th>
+                                <th class="completa">18</th>
+                                <th class="solo-mañanas">19</th>
+                                <th class="cierre">20</th>
+                                <th class="cierre">21</th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa">22</th>
+                                <th class="completa">23</th>
+                                <th class="completa">24</th>
+                                <th class="completa">25</th>
+                                <th class="completa">26</th>
+                                <th class="solo-mañanas">27</th>
+                                <th class="cierre">28</th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa">29</th>
+                                <th class="solo-mañanas">30</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <!-- CALENDARIO MAYO -->
+                    <article class="mes">
+                        <table class="cada-mes">
+                            <p> MAYO </p>
+                            <tr class="dias-semana">
+                                <th> L </th>
+                                <th> M </th>
+                                <th> X </th>
+                                <th> J </th>
+                                <th> V</th>
+                                <th> S </th>
+                                <th> D </th>
+                            </tr>
+
+                            <tr>
+                                <th> </th>
+                                <th> </th>
+                                <th class="cierre"> 1 </th>
+                                <th class="completa"> 2 </th>
+                                <th class="solo-mañanas"> 3 </th>
+                                <th class="solo-mañanas"> 4 </th>
+                                <th class="cierre"> 5 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="cierre"> 6 </th>
+                                <th class="completa"> 7 </th>
+                                <th class="completa"> 8 </th>
+                                <th class="completa"> 9 </th>
+                                <th class="completa"> 10 </th>
+                                <th class="solo-mañanas"> 11 </th>
+                                <th class="cierre"> 12 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 13 </th>
+                                <th class="completa"> 14 </th>
+                                <th class="completa"> 15 </th>
+                                <th class="completa"> 16 </th>
+                                <th class="completa"> 17 </th>
+                                <th class="solo-mañanas"> 18 </th>
+                                <th class="cierre"> 19 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 20 </th>
+                                <th class="completa"> 21 </th>
+                                <th class="cierre"> 22 </th>
+                                <th class="completa"> 23 </th>
+                                <th class="completa"> 24 </th>
+                                <th class="solo-mañanas"> 25 </th>
+                                <th class="cierre"> 26 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 27 </th>
+                                <th class="completa"> 28 </th>
+                                <th class="completa"> 29 </th>
+                                <th class="completa"> 30 </th>
+                                <th class="completa"> 31 </th>
+                                <th>  </th>
+                                <th>  </th>
+                            </tr>
+                        </table>
+                    </article>
+
+                    <!-- CALENDARIO JUNIO -->
+                    <article class="mes">
+                        <table class="cada-mes">
+                            <p> JUNIO </p>
+                            <tr class="dias-semana">
+                                <th> L </th>
+                                <th> M </th>
+                                <th> X </th>
+                                <th> J </th>
+                                <th> V</th>
+                                <th> S </th>
+                                <th> D </th>
+                            </tr>
+
+                            <tr>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
+                                <th class="solo-mañanas"> 1 </th>
+                                <th class="cierre"> 2 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 3 </th>
+                                <th class="completa"> 4 </th>
+                                <th class="completa"> 5 </th>
+                                <th class="completa"> 6 </th>
+                                <th class="completa"> 7 </th>
+                                <th class="solo-mañanas"> 8 </th>
+                                <th class="cierre"> 9 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 10 </th>
+                                <th class="completa"> 11 </th>
+                                <th class="completa"> 12 </th>
+                                <th class="completa"> 13 </th>
+                                <th class="completa"> 14 </th>
+                                <th class="solo-mañanas"> 15 </th>
+                                <th class="cierre"> 16 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 17 </th>
+                                <th class="completa"> 18 </th>
+                                <th class="completa"> 19 </th>
+                                <th class="completa"> 20 </th>
+                                <th class="completa"> 21 </th>
+                                <th class="completa"> 22 </th>
+                                <th class="completa"> 23 </th>
+                            </tr>
+
+                            <tr>
+                                <th class="completa"> 24 </th>
+                                <th class="completa"> 25 </th>
+                                <th class="completa"> 26 </th>
+                                <th class="completa"> 27 </th>
+                                <th class="completa"> 28 </th>
+                                <th class="solo-mañanas"> 29 </th>
+                                <th class="cierre"> 30</th>
+                            </tr>
+                        </table>
+                    </article>
+
+                </section> <!-- Fin contenedor-meses -->
+            </section> <!-- Fin contenedor-calendarios -->
         </main>
         
         <footer>
