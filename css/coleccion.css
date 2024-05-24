@@ -213,18 +213,17 @@ main .contenedor-filtros{
     text-align: center;
     color: #5b0808;
 
-    opacity: 0;
+    opacity: 0; /* Inicialmente la descripción no es visible */
     padding-top: 5%; /*Para que se separe un poco del título de la obra*/
     
     font-style: italic;
     
     text-transform: none;
 
-    position: relative;
+    position: relative; /* Para que pueda desplazarse */
   }
 
   .cada-obra:hover .descripcion-obra{
-    top: 0px;
     opacity: 1;
     transition: opacity 2.5s ease;
   }
