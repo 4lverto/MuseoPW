@@ -2,11 +2,71 @@
 <html>
 
     <head>
-        <title>Museo de Alberto</title>
+        <title>Museo Mojang</title>
+        <meta charset="utf-8"/>
+        
+        <link rel = "stylesheet" type = "text/css" href="css/base.css"/> 
+        <link rel = "stylesheet" type = "text/css" href="css/indice.css"/>
+        
+        <meta name="viewport" content="width=device-width", initial-scale="1.0">
+
     </head>
 
     <body>
-        <h1>Bienvenidos a mi museo</h1>
+
+        <header>
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            <section class="cabecera">
+                <a href="index.html"><img src="imagenes/Logo.png" id="logo" alt="logo" class="logo"> </a>
+
+                <!-- Usamos una clase InicioSesion que contendrá el formulario de inicio de sesión-->
+                <section class="InicioSesion">
+                    <form>
+                        <label for="Correo">Correo electrónico: </label><br>
+                        <input type="text" id="Correo" name="Correo" placeholder="ejemplo@gmail.com"><br>
+
+                        <label for="Contraseña">Contraseña: </label><br>
+                        <input type="password" id="Contraseña" name="Contraseña"><br>
+
+                        <input type="submit" id="iniciar" value="Iniciar Sesión"><br>
+                    </form>
+
+                    <a href="alta_usuario.html" id="registro">Registrarse</a>
+                </section>
+            </section>
+
+            <!-- Sección que corresponderá con el menú de navegación-->
+            <section class="contenedor-links">
+                <nav>
+                    <ul class="Navegador-Links">
+                        <li><a class="enlace-nav actual" href="index.html">Página principal</a></li>
+                        <li><a class="enlace-nav" href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="visita.html">Visita</a></li>
+                        <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav" href="informacion.html">Información</a></li>
+                        <li><a class="enlace-nav" href="experiencias.html">Experiencias</a></li>
+                    </ul>
+                </nav>
+            </section>
+        </header>
+
+        <main>
+
+            <section class="TituloMuseo">
+                <h1 id="MuseoMojang"> MUSEO MOJANG</h1>
+            </section>
+
+            <section class="Presentacion">
+                <p>Disfruta cada momento, cada pincelada y cada escultura, porque en este espacio, el arte cobra vida.</p>
+            </section>
+
+        </main>
+        
+        <footer>
+            <a class="comosehizo" href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a>
+            <a class="contact" href="pie_pagina/contacto.html">Contacto</a>
+            <p>Derechos de autor © 2024 Museo Mojang.</p>
+        </footer>
     </body>
 
 

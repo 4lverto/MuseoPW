@@ -1,0 +1,223 @@
+/*FORMATEAMOS EL DOCUMENTO*/
+*{
+    padding: 0;
+    margin: 0;
+    
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+    cursor: url("../imagenes/cursor.png") 0 -15,auto;
+
+    box-sizing: border-box;
+
+    list-style-type: none; 
+}
+
+/* Eliminamos los puntos que se muestran por defecto en una lista*/
+
+/*
+    /////////////////////////////////////////////////// INICIO BODY ///////////////////////////////////////////////////
+*/
+
+/* Hacemos que todo el documento funcione scrolleando */
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f0f0f000;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 20px;
+}
+
+body::-webkit-scrollbar-thumb:hover { /* Al pasar el ratón por encima del scroll bar cambia de color*/
+    background-color: #a86565;
+}
+
+/* FIN SCROLL BAR*/
+
+                                /*  // ///////////////////////////// //
+                                    //        INICIO HEADER          //
+                                    // ///////////////////////////// //
+                                */
+
+header{
+    background-image: url('../imagenes/cielo.jpg');
+    color: rgb(73, 60, 60);
+
+    background-size: cover;
+    background-position-x:center ;
+}
+
+/* // //////////////////////////////////////////// // */
+/* //        CABECERA = LOGO + FORMULARIO          // */
+/* // //////////////////////////////////////////// // */
+
+.cabecera{    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+/*
+    INICIO LOGO
+*/
+header .cabecera #logo{
+    height: auto;
+    width: 10em;
+    /* transition: 0.13; /*Lo usamos para que la transformación al pasar el cursos por encima no sea muy exagerada*/
+}
+
+header .cabecera #logo:hover{ /* Lo de hover se usa para que cuando pongamos el cursor encima, haga un efecto*/
+    animation: shake 0.5s; /* Así agrandaremos el logo cuando pasemos por encima*/
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-2deg); }
+    20% { transform: translate(-3px, 0px) rotate(2deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(2deg); }
+    50% { transform: translate(-1px, 2px) rotate(-2deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-2deg); }
+    80% { transform: translate(-1px, -1px) rotate(2deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-2deg); }
+  }
+
+/* FIN LOGO */
+
+/* INICIO INICIO SESIÓN */
+
+header .cabecera .InicioSesion{
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+    padding: 2%;
+}
+
+.InicioSesion #iniciar:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+header .cabecera .InicioSesion #registro:hover{
+    transform: scale(1.1);
+    color:rgb(254, 203, 75);
+}
+
+/* FIN INICIO SESIÓN */
+
+/* // //////////////////// // */
+/* //       NAVEGADOR      // */
+/* // //////////////////// // */
+
+/*
+INICIO LINKS DE NAVEGACIÓN
+*/
+
+
+header .Navegador-Links{    
+    background-color: #333;
+    text-align: center;
+}
+  
+header .Navegador-Links li{
+    display: inline-block; /* Toman el ancho necesario para almacenar el texto*/
+}
+  
+header .Navegador-Links li a{
+    font-size: 100%;
+    text-decoration: none;
+
+    display: inline-block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+header .Navegador-Links li a:not(.actual){
+    color: white;
+}
+  
+header .Navegador-Links li a:hover:not(.actual) {
+    color: rgb(112, 233, 233);
+    background-color: #111;
+    transform: scale(1.1); /*Cuando pasemos el cursos por encima, aumentan un poco su tamaño*/
+}
+
+header .Navegador-Links li .actual{
+    color: #111;
+    text-decoration: underline;
+    background-color: aquamarine;
+}
+
+header .Navegador-Links li .actual:hover{
+    transform: scale(1.1);
+}
+
+/*
+INICIO LINKS DE NAVEGACIÓN
+*/
+
+
+                                /*  // ////////////////////////// //
+                                    //        FIN HEADER          //
+                                    // ////////////////////////// //
+                                */
+
+                                /*  // ///////////////////////////// //
+                                    //          INICIO FOOTER        //
+                                    // ///////////////////////////// //
+                                */
+
+
+footer{
+    background-color: rgb(112, 233, 233);
+    color: rgb(0, 0, 0);
+
+    text-decoration: none;
+    
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    
+}
+
+
+
+                                /*  // ////////////////////////// //
+                                    //          FIN FOOTER        //
+                                    // ////////////////////////// //
+                                */
+
+/*
+/////////////////////////////////////////////////// FIN BODY ///////////////////////////////////////////////////
+*/
+
+/* Diseño Responsive */
+
+@media (max-width: 480px) {
+
+    header .cabecera {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        align-items: center;
+    }
+
+    header .cabecera .InicioSesion{
+        padding: 4%;
+    }
+
+}

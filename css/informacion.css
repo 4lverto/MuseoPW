@@ -1,0 +1,154 @@
+main{
+    display: flex;
+    flex-direction: column;
+
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    background-image: url('../imagenes/Fondo2.png');
+    background-size: cover;
+}
+
+h1,h2,h4,h3,h5{
+    text-decoration: underline;
+    padding: 3%;
+    
+    font-size: 3em;
+}
+
+h6{
+    font-size: 2em;
+}
+
+/*
+    // ////////////// //
+    //    HORARIOS    //
+    // ////////////// //    
+*/  
+
+.contenedor-horario{
+
+    grid-row: 1/4;
+    grid-column: 1/3;
+
+    text-align: center;
+}
+
+.contenedor-horario p{
+    font-size: 2em;
+}
+
+.contenedor-horario .semana{
+    padding: 5%;
+}
+
+.contenedor-horario .finde{
+    padding: 5%;
+}
+
+/*
+    // ////////////// //
+    //    LEYENDA    //
+    // ////////////// //    
+*/  
+
+.contenedor-leyenda{
+    grid-row: 3/4;
+    grid-column: 3/4;
+
+    text-align: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.contenedor-leyenda p{
+    font-weight: bold;
+}
+
+/*
+    // /////////////////// //
+    //     CALENDARIOS     //
+    // /////////////////// //    
+*/  
+
+.contenedor-calendarios{
+
+    grid-row: 4/7;
+    grid-column: 1/6;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    padding-bottom: 5%;
+}
+
+.contenedor-calendarios .meses{
+    display: flex;
+    flex-direction: row;
+
+    width: 100%;
+    height: auto;
+
+    font-size: 2em;
+
+    justify-content: space-around;
+}
+
+.cada-mes{
+    text-align: center;
+}
+
+.cada-mes p{
+    text-decoration: overline;
+    padding-bottom: 2%;
+}
+
+.cada-mes .dias-semana{
+    background-color: rgba(44, 11, 11, 0.247);
+    font-size: 1em;
+}
+
+.mes p{
+    text-decoration: overline;
+}
+
+.completa{
+    background-color: rgb(32, 148, 36);
+}
+
+.solo-mañanas{
+    background-color: rgb(189, 198, 15);
+}
+
+.cierre{
+    background-color: rgb(158, 45, 34);
+}
+
+/*
+    // /////////////////// //
+    //       PRECIOS       //
+    // /////////////////// //    
+*/  
+
+.contenedor-precios{
+
+
+    grid-row: 1/4;
+    grid-column: 4/6;
+}
+
+.contenedor-precios h3{
+    text-align: center;
+}
+
+main .contenedor-precios ul{
+    font-size: 1.5em;
+    padding-left: 10%;
+}
+
+main .contenedor-precios ul li{
+    padding-top: 5%;
+}

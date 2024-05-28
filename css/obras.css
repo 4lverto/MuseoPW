@@ -1,0 +1,113 @@
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    background-color: rgb(119, 169, 212);
+}
+
+/*
+                    // //////////////////////////////////////////////// //
+                    //       CONTENEDOR OBRA - Imagen a lo ancho        //
+                    // //////////////////////////////////////////////// //
+                    */
+
+/* De esta forma, la imagen se adapta al 100% de la pantalla*/
+main .imagen{   
+    width: 100%;
+}
+
+
+                    /*
+                    // ///////////////////////////////////////////////////////////////////////// //
+                    //  CONTENEDOR-INFO - Mostramos la ficha técnica y las obras relacionadas //
+                    // ////////////////////////////////////////////////////////////////////// //
+                    */
+
+main .contenedor-info{
+    display: flex;
+    flex-direction: row;
+}
+
+/* FICHA TÉCNICA */
+
+main .contenedor-info .ficha-tecnica{
+    width: 70%;
+    height: auto;
+
+    text-align: center;
+}
+
+main .contenedor-info .ficha-tecnica .datos{
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+}
+
+main .contenedor-info .ficha-tecnica h1{
+    font-size: 3em;
+    color: black;
+
+    text-decoration: underline;
+    
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+main .contenedor-info .ficha-tecnica .datos li{
+    padding: 1%;
+}
+
+
+/* ASIDE DERECHA - Obras relacionadas */
+
+main .contenedor-info .obras-relacionadas{
+    width: 30%;
+    height: auto;
+    
+    padding-top: 5%;
+
+    background-color: rgb(115, 153, 153);
+
+    display: flex;
+    flex-direction: column;
+
+    text-align: center;
+    align-items: center;
+}
+
+main .obras-relacionadas .relacion{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    padding-top: 5%;
+}
+
+main .obras-relacionadas h2{
+    font-size: 2em;
+    color: black;
+
+    text-decoration: underline;
+    
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+main .obras-relacionadas .relacion .foto-obra{
+    align-items: center;
+
+    padding: 2%;
+
+    width: 75%;
+    height: auto;
+
+    transition: 0.5s;
+}
+
+.foto-obra:hover{
+    transform: scale(1.1);
+}
+
+.autor{
+    font-style: italic;
+}

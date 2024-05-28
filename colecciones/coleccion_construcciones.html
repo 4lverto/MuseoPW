@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Museo Mojang</title>
+        <meta charset="utf-8"/>
+        <link rel = "stylesheet" type = "text/css" href="../css/base.css"/>
+        <link rel = "stylesheet" type = "text/css" href="../css/coleccion.css"/>
+
+        <meta name="viewport" content="width=device-width">
+
+    </head>
+
+    <body>
+
+        <header>
+            
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            <section class="cabecera">
+                <a href="../index.html"><img src="../imagenes/Logo.png" id="logo" alt="logo" class="logo"> </a>
+            </section>
+
+            <!-- Sección que corresponderá con el menú de navegación-->
+                <nav class="Navegador">
+                    <ul class="Navegador-Links">
+                        <li><a class="enlace-nav " href="../index.html">Página principal</a></li>
+                        <li><a class="enlace-nav actual" href="../coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="../visita.html">Visita</a></li>
+                        <li><a class="enlace-nav" href="../exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav" href="../informacion.html">Información</a></li>
+                        <li><a class="enlace-nav" href="../experiencias.html">Experiencias</a></li>
+                    </ul>
+                </nav>
+
+        </header>
+
+        <main>
+
+            <!-- INICIO DEL MENÚ DE FILTRADO -->
+
+            <aside class="contenedor-filtros">
+
+                <h1 class="filtrar-obras"> FILTRAR OBRAS </h1>
+                            
+                <section class="cada-filtro">
+                    <article class="filtro">
+                        <button class="drop-boton">Construcciones</button>
+                        <ul class="drop-contenido">
+                            <a href="../colecciones/coleccion_construcciones.html"> Piedra </a>
+                            <a href="../colecciones/coleccion_construcciones.html"> Madera </a>
+                            <a href="../colecciones/coleccion_construcciones.html"> Metal </a>
+                        </ul>
+                    </article>
+
+                    <article class="filtro">
+                        <button class="drop-boton">Animales</button>
+                        <ul class="drop-contenido">
+                            <a href="../colecciones/coleccion_animales.html"> Mamíferos </a>
+                            <a href="../colecciones/coleccion_animales.html"> Aves </a>
+                            <a href="../colecciones/coleccion_animales.html"> Monstruos </a>
+                        </ul>
+                    </article>
+
+                    <article class="filtro">
+                        <button class="drop-boton">Paisajes</button>
+                        <ul class="drop-contenido">
+                            <a href="../colecciones/coleccion_paisajes.html"> Nocturnos </a>
+                            <a href="../colecciones/coleccion_paisajes.html"> Veraniegos </a>
+                            <a href="../colecciones/coleccion_paisajes.html"> Bonitos </a>
+                        </ul>
+                    </article>
+
+                </section>
+            </aside>
+
+            <section class="steve">
+                <img src="../imagenes/steve_saludando-removebg-preview.png" alt="steve">
+            </section>
+
+              <!-- FIN DEL MENÚ DE FILTRADO -->
+
+              <!-- INICIO DEL MENÚ CON TODAS LAS OBRAS -->
+              <section class="contenedor-principal"> <!-- Contendrá toda la sección de obras-->
+                <h2> COLECCIÓN CONSTRUCCIONES </h2>
+
+                <!-- Contenedor con las 4 filas de obras -->
+                <section class="contenedor-obras">
+
+                    <!-- Primera fila con 3 obras -->
+                    <section class="filas-con-obras">
+                        <!-- Obra1-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra1.html">
+                                <img src="../obras_fotos/Construccion1.jpg" alt="Obra 1" class="foto-obra"> La Gioconda</a>
+                                
+                                <!-- Descripción obra1-->
+                                <section class="descripcion-obra">
+                                    <p> Leonardo da Vinci </p>
+                                    <p> Siglo XV</p>
+                                </section>
+                        </article>
+
+                        <!-- Obra2-->
+                        <article class="cada-obra sombra">
+                                <a href="../obras_documentos/obra2.html">
+                                    <img src="../obras_fotos/Construccion2.jpg" alt="Obra 2" class="foto-obra"> Impresión, sol naciente</a>
+                                
+                                <!-- Descripción obra1-->
+                                <section class="descripcion-obra">
+                                    <p> Calude Monet</p>
+                                    <p> Siglo XX</p>
+                                </section>
+                        </article>
+
+                        <!-- Obra3-->
+                        <article class="cada-obra sombra">
+                                <a href="../obras_documentos/obra3.html">
+                                    <img src="../obras_fotos/Construccion3.jpg" alt="Obra 3" class="foto-obra"> Las Meninas</a>
+                                    <!-- Descripción obra1-->
+                                    <section class="descripcion-obra">
+                                        <p> Diego de Velázquez </p>
+                                        <p> Siglo X</p>
+                                    </section>
+                            </section>
+                        </article>
+                        
+                    <!-- Segunda fila con 3 obras -->
+                    <section class="filas-con-obras">
+                        <!-- Obra4-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra1.html">
+                                <img src="../obras_fotos/Construccion4.jpg" alt="Obra 4" class="foto-obra"> La Capilla Sixtina</a>
+                                
+                            <!-- Descripción obra4-->
+                            <section class="descripcion-obra">
+                                <p> Miguel Ángel </p>
+                                <p> Siglo XI</p>
+                            </section>
+                        </article>
+
+                        <!-- Obra5-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra2.html">
+                                <img src="../obras_fotos/Construccion5.jpg" alt="Obra 5" class="foto-obra"> El Guernica </a>
+                                
+                            <!-- Descripción obra5-->
+                            <section class="descripcion-obra">
+                                <p> Pablo Picasso </p>
+                                <p> Siglo XV</p>
+                            </section>
+                        </article>
+
+                        <!-- Obra6-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra3.html">
+                                <img src="../obras_fotos/Construccion2.jpg" alt="Obra 6" class="foto-obra"> La Noche Estrellada </a>
+                            <!-- Descripción obra6-->
+                            <section class="descripcion-obra">
+                                <p> Vincent Van Gogh </p>
+                                <p> Siglo X</p>
+                            </section>
+                        </article>
+                    
+                    </section>
+                    
+                    <!-- Tercera fila con 3 obras -->
+                    <section class="filas-con-obras">
+                        <!-- Obra7-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra1.html">
+                                <img src="../obras_fotos/Construccion1.jpg" alt="Obra 7" class="foto-obra"> Nacimiento de Venus</a>
+                                
+                            <!-- Descripción obra7-->
+                            <section class="descripcion-obra">
+                                <p> Botticelli</p>
+                                <p> Siglo XX</p>
+                            </section>
+                        </article>
+
+                        <!-- Obra8-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra2.html">
+                                <img src="../obras_fotos/Construccion3.jpg" alt="Obra 8" class="foto-obra"> Jardín de las delicias</a>
+                                
+                            <!-- Descripción obra8-->
+                            <section class="descripcion-obra">
+                                <p> El Bosco </p>
+                                <p> Siglo V</p>
+                            </section>
+                        </article>
+
+                        <!-- Obra9-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra3.html">
+                                <img src="../obras_fotos/Construccion5.jpg" alt="Obra 9" class="foto-obra"> Joven de la Perla </a>
+                            <!-- Descripción obra9-->
+                            <section class="descripcion-obra">
+                                <p> Johannes Vermeer </p>
+                                <p> Siglo VI</p>
+                            </section>
+                        </article>
+                    
+                    </section>
+                        
+                    <!-- Cuarta fila con 3 obras -->
+                    <section class="filas-con-obras">
+                        
+                        <!-- Obra10-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra1.html">
+                                <img src="../obras_fotos/Construccion4.jpg" alt="Obra 10" class="foto-obra"> Marylin </a>
+                                
+                            <!-- Descripción obra10-->
+                            <section class="descripcion-obra">
+                                <p> Andy Warhol </p>
+                                <p> Siglo XI</p>
+                            </section>
+                        </article>
+
+                        <!-- Obra11-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra2.html">
+                                <img src="../obras_fotos/Construccion2.jpg" alt="Obra 11" class="foto-obra"> Las dos Fridas </a>
+                                
+                            <!-- Descripción obra11-->
+                            <section class="descripcion-obra">
+                                <p> Frida Kalho </p>
+                                <p> Siglo XV</p>
+                            </section>
+                        </article>
+
+                        <!-- Obra12-->
+                        <article class="cada-obra sombra">
+                            <a href="../obras_documentos/obra3.html">
+                                <img src="../obras_fotos/Construccion3.jpg" alt="Obra 12" class="foto-obra"> Los Fusilamientos </a>
+                                <!-- Descripción obra12-->
+                            <section class="descripcion-obra">
+                                <p> Francisco de Goya </p>
+                                <p> Siglo XX</p>
+                            </section>
+                        </article>
+                    </section>
+
+                </section> <!-- Fin contenedor obras -->
+
+                <section class="contenedor-ver_mas">
+                    <a href="../coleccion.html" class="boton-anterior">Anterior</a>
+                    <a href="coleccion_paisajes.html" class="boton-siguiente">Siguiente</a>
+                </section>
+                
+              
+            </section> <!-- Fin contenedor principal-->
+
+        </main>
+        
+        <footer>
+            <a class="comosehizo" href="../pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a>
+            <a class="contact" href="../pie_pagina/contacto.html">Contacto</a>
+            <p>Derechos de autor © 2024 Museo Mojang.</p>
+        </footer>
+    </body>
+
+
+</html>
+

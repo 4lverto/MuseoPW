@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Museo Mojang</title>
+        <meta charset="utf-8"/>
+        <link rel = "stylesheet" type = "text/css" href="css/base.css"/>
+        <link rel = "stylesheet" type = "text/css" href="css/visita.css"/>
+
+        <meta name="viewport" content="width=device-width">
+
+    </head>
+
+    <body>
+
+        <header>
+            <!-- Uso una clase Cabecera que contendrá el Logo del museo y el Formulario-->
+            <section class="cabecera">
+                <a href="index.html"><img src="imagenes/Logo.png" id="logo" alt="logo" class="logo"> </a>
+            </section>
+
+            <!-- Sección que corresponderá con el menú de navegación-->
+                <nav class="Navegador">
+                    <ul class="Navegador-Links">
+                        <li><a class="enlace-nav " href="index.html">Página principal</a></li>
+                        <li><a class="enlace-nav " href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav actual" href="visita.html">Visita</a></li>
+                        <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
+                        <li><a class="enlace-nav" href="informacion.html">Información</a></li>
+                        <li><a class="enlace-nav" href="experiencias.html">Experiencias</a></li>
+                    </ul>
+                </nav>
+
+        </header>
+
+        <main>
+
+            <section class="contenedor-visita">
+
+                <h1 class="presentacion"> VISITA NUESTRO MUSEO </h1>
+                
+                <img src="imagenes/planoMuseo.PNG" class="plano">
+
+                <section class="leyenda">
+                    <h2> Leyenda </h2>
+                    <nav>
+                        <ul>
+                            <li> <a class="aqui"> Tú estás aquí. </a></li>
+                            <li> <a class="expo"> Sala de exposiciones. </a></li>
+                            <li> <a class="info"> Sala de información. </a></li>
+                            <li> <a class="obras"> Colección de obras. </a></li>
+                            <li> <a class="salida"> Salida del museo. </a></li>
+                        </ul>
+                    </nav>
+                </section>
+
+                <h3 class="encontraras"> ¿Qué encontrarás en cada sala? </h3>
+
+                <section class="contenedor-salas">
+                    
+                    <article class="sala1">
+                        <p class="titulo-sala">Sala de Exposiciones</p>
+
+                        <a class="texto"> Esta sala contiene las diferentes exposiciones que cada semana mostramos en el museo. </a>
+                    </article>
+
+                    <article class="sala2">
+                        <p class="titulo-sala">Sala de Información</p>
+
+                        <a class="texto"> En esta sala podrás encontrar a miembros de personal dispuesto a ofrecerte información sobre cualquier obra o exposición. </a>
+                    </article>
+
+                    <article class="sala3">
+                        <p class="titulo-sala">Colección de obras</p>
+
+                        <a class="texto"> En esta sala podrás disfrutar de toda nuestra colección de obras.</a>
+                    </article>
+                </section>
+
+            </section>
+
+        </main>
+        
+        <footer>
+            <a class="comosehizo" href="pie_pagina/como_se_hizo.pdf">¿Cómo se hizo?</a>
+            <a class="contact" href="pie_pagina/contacto.html">Contacto</a>
+            <p>Derechos de autor © 2024 Museo Mojang.</p>
+        </footer>
+    </body>
+
+
+</html>

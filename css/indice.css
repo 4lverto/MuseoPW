@@ -1,0 +1,80 @@
+                                /*  // ///////////////////////////// //
+                                    //         INICIO MAIN           //
+                                    // ////////////////////////////  //
+                                */
+
+main{  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    height: 40em;
+    background-image: url('../imagenes/Fondo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    align-items: center;
+    text-align: center; 
+}
+
+main .TituloMuseo{
+    grid-row: 1/2;
+    grid-column: 2/5;
+
+    text-align: center;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 2%;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.4); 
+
+    color: white;
+
+    font-size: 2em;
+    font-weight: bold;
+
+    border: 3px solid;
+    padding: 2%;
+}
+
+main .Presentacion{
+
+    grid-row: 2/3;
+    grid-column: 2/5;
+
+    align-items: center;
+    text-align: center;
+
+    padding: 2%;
+    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.4); 
+
+    color: rgb(0, 0, 0);
+
+    font-size: 2em;
+    font-weight: bold;
+
+    padding: 2%;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+    main .Presentacion{
+        grid-column: 1/6;
+    }
+
+}
+
+@media(max-width: 480px){
+    main .Presentacion{
+        content-visibility: hidden;
+    }
+
+    main .TituloMuseo{
+        grid-row: 2/3;
+        grid-column: 1/6;
+    }
+}
