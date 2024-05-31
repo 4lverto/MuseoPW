@@ -45,11 +45,11 @@
                 <nav class="Navegador">
                     <ul class="Navegador-Links">
                         <li><a class="enlace-nav" href="index.php">Página principal</a></li>
-                        <li><a class="enlace-nav" href="coleccion.html">Colección</a></li>
+                        <li><a class="enlace-nav" href="coleccion.php">Colección</a></li>
                         <li><a class="enlace-nav" href="visita.html">Visita</a></li>
                         <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
                         <li><a class="enlace-nav" href="informacion.html">Información</a></li>
-                        <li><a class="enlace-nav" href="experiencias.html">Experiencias</a></li>
+                        <li><a class="enlace-nav" href="experiencias.php">Experiencias</a></li>
                     </ul>
                 </nav>
             </section>
