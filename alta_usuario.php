@@ -56,7 +56,7 @@
 
             <section class="formularios">
                     
-                <form action="registrar_usuario.php" method="POST">
+                <form action="procesar_registro.php" method="POST">
                         
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" placeholder="Alberto" required><br><br>

@@ -30,7 +30,7 @@ session_start();
                         ?>
                     </p>
                     
-                    <a href="cerrar_sesion.php" id="cerrar">Cerrar Sesión</a>
+                    <a href="procesar_cerrar_sesion.php" id="cerrar">Cerrar Sesión</a>
                     
                 <!-- En el caso de que el usuario no haya iniciado sesión o no lo haya hecho correctamente: -->
                 <?php else: ?>
@@ -54,7 +54,7 @@ session_start();
                     <!--
                         Se muestra el formulario de inicio de sesión en caso de que el usuario trate de acceder incorrectamente
                         o aún no haya intentado iniciar sesión-->
-                    <form action="iniciar_sesion.php" method="POST">
+                    <form action="procesar_iniciar_sesion.php" method="POST">
                         <label for="Usuario">Nombre de Usuario: </label><br>
                         <input type="text" id="Usuario" name="nombre" placeholder="soyUnUsuario"><br>
                         <label for="Contraseña">Contraseña: </label><br>
