@@ -1,39 +1,44 @@
 <?php
-// registrar_usuario.php
-$servername = "localhost";
-$username = "pwalbertoov";
-$password = "23albertoov24";
-$dbname = "dbalbertoov_pw2324";
+session_start();
+include 'conexion_bd.inc';
 
-try {
-    // Crear conexión PDO
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    // Configurar el modo de error de PDO a excepción
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+// Verificación de que la solicitud que se recibe es POST
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    // Obtener datos del formulario
-    $nombre = $_POST['nombre'];
-    $email = $_POST['email'];
-    $password = $_POST['password']; // Contraseña sin encriptar
-    $edad = $_POST['edad'];
-    $genero = $_POST['genero'];
+    try {
+        $conexion = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+        $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // Preparar y ejecutar la inserción de datos
-    $stmt = $conn->prepare("INSERT INTO usuarios (email, nombre, password, edad, genero) VALUES (:email, :nombre, :password, :edad, :genero)");
-    $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':password', $password);
-    $stmt->bindParam(':edad', $edad);
-    $stmt->bindParam(':genero', $genero);
+        // Almaceno los datos enviados en variables
+        $email = $_POST['email'];
+        $nombre = $_POST['nombre'];
+        $password = $_POST['password'];
+        $edad = $_POST['edad'];
+        $genero = $_POST['genero'];
+        $tipo = "Publico General";
+        
+        // Defino la consulta genérica colocando marcadores de parámetros
+        $consultaSQL = "INSERT INTO usuarios (email, nombre, password, edad, genero, tipo) 
+                        VALUES (:email, :nombre, :password, :edad, :genero, :tipo)";
+        
+        // Obtengo un objeto de la clase PDOStatement ($sentenciaSQL), mediante el método "prepare" del objeto conexión.
+        $sentenciaSQL = $conexion->prepare($consultaSQL);
+        
+        // Asigno los valores correspondientes a los marcadores de parámetros
+        $sentenciaSQL->bindParam(':email', $email);
+        $sentenciaSQL->bindParam(':nombre', $nombre);
+        $sentenciaSQL->bindParam(':password', $password);
+        $sentenciaSQL->bindParam(':edad', $edad);
+        $sentenciaSQL->bindParam(':genero', $genero);
+        $sentenciaSQL->bindParam(':tipo', $tipo);
 
-    $stmt->execute();
+        // Ejecuto la sentencia
+        $sentenciaSQL->execute();
+        header("Location: index.php");
+        exit();
 
-    // Redirigir al usuario a index.php después del registro
-    header("Location: index.php");
-    exit();
-} catch(PDOException $e) {
-    echo "Error: " . $e->getMessage();
+    } catch(PDOException $e) {
+        die("Conexión fallida: " . $e->getMessage());
+    }
 }
-
-$conn = null;
 ?>

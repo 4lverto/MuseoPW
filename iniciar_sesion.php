@@ -1,32 +1,28 @@
 <?php
-// iniciar_sesion.php
-session_start();
 
-$servername = "localhost";
-$username = "pwalbertoov";
-$password = "23albertoov24";
-$dbname = "dbalbertoov_pw2324";
+session_start();
+include 'conexion_bd.inc';
 
 try {
     // Crear conexión PDO
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conexion = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
     // Configurar el modo de error de PDO a excepción
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Obtener datos del formulario
     $nombre = $_POST['nombre'];
     $password = $_POST['password'];
 
     // Preparar y ejecutar la consulta
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE nombre = :nombre AND password = :password");
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':password', $password);
+    $sentenciaSQL = $conexion->prepare("SELECT * FROM usuarios WHERE nombre = :nombre AND password = :password");
+    $sentenciaSQL->bindParam(':nombre', $nombre);
+    $sentenciaSQL->bindParam(':password', $password);
 
-    $stmt->execute();
+    $sentenciaSQL->execute();
 
     // Verificar si se encontró el usuario
-    if ($stmt->rowCount() > 0) {
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+    if ($sentenciaSQL->rowCount() > 0) {
+        $row = $sentenciaSQL->fetch(PDO::FETCH_ASSOC);
         $_SESSION['nombre'] = $row['nombre'];
         $_SESSION['tipo'] = $row['tipo'];
         header("Location: index.php");
@@ -36,11 +32,12 @@ try {
         header("Location: index.php");
         exit();
     }
+    
 } catch(PDOException $e) {
     $_SESSION['error'] = "Error: " . $e->getMessage();
     header("Location: index.php");
     exit();
 }
 
-$conn = null;
+$conexion = null;
 ?>

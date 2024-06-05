@@ -1,3 +1,7 @@
+<?php
+    include 'conexion_bd.inc';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,14 +39,16 @@
                 <?php
                 // Conectar a la base de datos y obtener los comentarios
                 try {
-                    $conn = new PDO("mysql:host=localhost;dbname=dbalbertoov_pw2324", "pwalbertoov", "23albertoov24");
-                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                    $stmt = $conn->query("SELECT usuarios.nombre, usuarios.genero, comentarios.comentario, comentarios.valoracion, comentarios.fecha FROM comentarios JOIN usuarios ON comentarios.email = usuarios.email ORDER BY comentarios.fecha DESC");
-                    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                    $conexion = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                    
+                    $sentenciaSQL = $conexion->query("SELECT usuarios.nombre, usuarios.genero, comentarios.comentario, comentarios.valoracion, comentarios.fecha FROM comentarios JOIN usuarios ON comentarios.email = usuarios.email ORDER BY comentarios.fecha DESC");
+                    
+                    while ($experiencia = $sentenciaSQL->fetch(PDO::FETCH_ASSOC)) {
                         $imagen = "";
-                        if ($row['genero'] == 'masculino') {
+                        if ($experiencia['genero'] == 'masculino') {
                             $imagen = "imagenes/hombre.png";
-                        } elseif ($row['genero'] == 'femenino') {
+                        } elseif ($experiencia['genero'] == 'femenino') {
                             $imagen = "imagenes/mujer.png";
                         } else {
                             $imagen = "imagenes/otro.PNG";
@@ -50,19 +56,19 @@
                         echo "<article class='opinion'>
                             <section class='valoracion'>
                                 <article class='usuario'>
-                                    <img src='$imagen' alt='{$row['genero']}'>
-                                    <p>{$row['nombre']}</p>
+                                    <img src='$imagen' alt='{$experiencia['genero']}'>
+                                    <p>{$experiencia['nombre']}</p>
                                 </article>
                                 <article class='fecha'>
-                                    <p>{$row['fecha']}</p>
+                                    <p>{$experiencia['fecha']}</p>
                                 </article>
                                 <article class='puntuacion'>
-                                    <p>{$row['valoracion']}/5</p>
+                                    <p>{$experiencia['valoracion']}/5</p>
                                 </article>
                             </section>
                             <section class='comentario'>
                                 <article class='comentario'>
-                                    <p>{$row['comentario']}</p>
+                                    <p>{$experiencia['comentario']}</p>
                                 </article>
                             </section>
                         </article>";

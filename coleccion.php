@@ -1,53 +1,59 @@
 <?php
 session_start();
+include 'conexion_bd.inc';
 
-// Conectar a la base de datos
-$servername = "localhost";
-$username = "pwalbertoov";
-$password = "23albertoov24";
-$dbname = "dbalbertoov_pw2324";
-
+// Verificamos la conexión a la base de datos
 try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $conexion = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
     die("Conexión fallida: " . $e->getMessage());
 }
 
-// Funciones para gestionar obras
+// ////////////////////////////// //
+// Funciones para gestionar obras //
+// ////////////////////////////// //
+
 function obtenerObras($categoria = null, $subcategoria = null) {
-    global $conn;
-    $sql = "SELECT * FROM obras";
+    global $conexion;
+    $consultaSQL = "SELECT * FROM obras";
+
+    // Si se aplica algún filtro (categoría o categoria+subcategoria), se modifica la consulta aplicando dicho filtro.
     if ($categoria && $subcategoria) {
-        $sql .= " WHERE categoria = :categoria AND subcategoria = :subcategoria";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':categoria', $categoria);
-        $stmt->bindParam(':subcategoria', $subcategoria);
+        $consultaSQL .= " WHERE categoria = :categoria AND subcategoria = :subcategoria";
+        $sentenciaSQL = $conexion->prepare($consultaSQL);
+        $sentenciaSQL->bindParam(':categoria', $categoria);
+        $sentenciaSQL->bindParam(':subcategoria', $subcategoria);
     } elseif ($categoria) {
-        $sql .= " WHERE categoria = :categoria";
-        $stmt = $conn->prepare($sql);
-        $stmt->bindParam(':categoria', $categoria);
+        $consultaSQL .= " WHERE categoria = :categoria";
+        $sentenciaSQL = $conexion->prepare($consultaSQL);
+        $sentenciaSQL->bindParam(':categoria', $categoria);
     } else {
-        $stmt = $conn->prepare($sql);
+        $sentenciaSQL = $conexion->prepare($consultaSQL);
     }
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $sentenciaSQL->execute();
+
+    // Se devuelve el resultado de ejecutar la consulta como un array (fetchAll)
+    return $sentenciaSQL->fetchAll(PDO::FETCH_ASSOC);
 }
 
+// Función que devuelve todas las (diferentes) categorías de las obras
 function obtenerCategorias() {
-    global $conn;
-    $sql = "SELECT DISTINCT categoria FROM obras";
-    $stmt = $conn->query($sql);
-    return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    global $conexion;
+    $consultaSQL = "SELECT DISTINCT categoria FROM obras";
+    $sentenciaSQL = $conexion->query($consultaSQL);
+
+    // Se devuelve en forma de array todas las (diferentes) categorías de las obras
+    return $sentenciaSQL->fetchAll(PDO::FETCH_COLUMN);
 }
 
 function obtenerSubcategorias($categoria) {
-    global $conn;
-    $sql = "SELECT DISTINCT subcategoria FROM obras WHERE categoria = :categoria";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':categoria', $categoria);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_COLUMN);
+    global $conexion;
+    $consultaSQL = "SELECT DISTINCT subcategoria FROM obras WHERE categoria = :categoria";
+    $sentenciaSQL = $conexion->prepare($consultaSQL);
+    $sentenciaSQL->bindParam(':categoria', $categoria);
+    $sentenciaSQL->execute();
+    return $sentenciaSQL->fetchAll(PDO::FETCH_COLUMN);
 }
 
 function obtenerImagenes() {
@@ -57,68 +63,100 @@ function obtenerImagenes() {
 }
 
 function obtenerObra($id) {
-    global $conn;
-    $sql = "SELECT * FROM obras WHERE id = :id";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
-    return $stmt->fetch(PDO::FETCH_ASSOC);
+    global $conexion;
+    $consultaSQL = "SELECT * FROM obras WHERE id = :id";
+    $sentenciaSQL = $conexion->prepare($consultaSQL);
+    $sentenciaSQL->bindParam(':id', $id);
+    $sentenciaSQL->execute();
+    return $sentenciaSQL->fetch(PDO::FETCH_ASSOC);
 }
 
 function agregarObra($categoria, $subcategoria, $titulo, $url, $autor, $fecha) {
-    global $conn;
-    $sql = "INSERT INTO obras (categoria, subcategoria, titulo, url, autor, fecha) VALUES (:categoria, :subcategoria, :titulo, :url, :autor, :fecha)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':categoria', $categoria);
-    $stmt->bindParam(':subcategoria', $subcategoria);
-    $stmt->bindParam(':titulo', $titulo);
-    $stmt->bindParam(':url', $url);
-    $stmt->bindParam(':autor', $autor);
-    $stmt->bindParam(':fecha', $fecha);
-    $stmt->execute();
+    global $conexion;
+    $consultaSQL = "INSERT INTO obras (categoria, subcategoria, titulo, url, autor, fecha) VALUES (:categoria, :subcategoria, :titulo, :url, :autor, :fecha)";
+    $sentenciaSQL = $conexion->prepare($consultaSQL);
+    $sentenciaSQL->bindParam(':categoria', $categoria);
+    $sentenciaSQL->bindParam(':subcategoria', $subcategoria);
+    $sentenciaSQL->bindParam(':titulo', $titulo);
+    $sentenciaSQL->bindParam(':url', $url);
+    $sentenciaSQL->bindParam(':autor', $autor);
+    $sentenciaSQL->bindParam(':fecha', $fecha);
+    $sentenciaSQL->execute();
 }
 
 function modificarObra($id, $categoria, $subcategoria, $titulo, $url, $autor, $fecha) {
-    global $conn;
-    $sql = "UPDATE obras SET categoria = :categoria, subcategoria = :subcategoria, titulo = :titulo, url = :url, autor = :autor, fecha = :fecha WHERE id = :id";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id', $id);
-    $stmt->bindParam(':categoria', $categoria);
-    $stmt->bindParam(':subcategoria', $subcategoria);
-    $stmt->bindParam(':titulo', $titulo);
-    $stmt->bindParam(':url', $url);
-    $stmt->bindParam(':autor', $autor);
-    $stmt->bindParam(':fecha', $fecha);
-    $stmt->execute();
+    global $conexion;
+    $consultaSQL = "UPDATE obras SET categoria = :categoria, subcategoria = :subcategoria, titulo = :titulo, url = :url, autor = :autor, fecha = :fecha WHERE id = :id";
+    $sentenciaSQL = $conexion->prepare($consultaSQL);
+    $sentenciaSQL->bindParam(':id', $id);
+    $sentenciaSQL->bindParam(':categoria', $categoria);
+    $sentenciaSQL->bindParam(':subcategoria', $subcategoria);
+    $sentenciaSQL->bindParam(':titulo', $titulo);
+    $sentenciaSQL->bindParam(':url', $url);
+    $sentenciaSQL->bindParam(':autor', $autor);
+    $sentenciaSQL->bindParam(':fecha', $fecha);
+    $sentenciaSQL->execute();
 }
 
 function eliminarObra($id) {
-    global $conn;
-    $sql = "DELETE FROM obras WHERE id = :id";
-    $stmt = $conn->prepare($sql);
-    $stmt->bindParam(':id', $id);
-    $stmt->execute();
+    global $conexion;
+    $consultaSQL = "DELETE FROM obras WHERE id = :id";
+    $sentenciaSQL = $conexion->prepare($sql);
+    $sentenciaSQL->bindParam(':id', $id);
+    $sentenciaSQL->execute();
 }
 
-// Gestión de solicitudes
+                                                    // ////////////////////// //
+                                                    // Gestión de solicitudes //
+                                                    // ////////////////////// //
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    // Si se envía el formulario correspondiente a agregar obra:
     if (isset($_POST['agregar'])) {
         agregarObra($_POST['categoria'], $_POST['subcategoria'], $_POST['titulo'], $_POST['url'], $_POST['autor'], $_POST['fecha']);
+
+    // Si se envía el formulario correspondiente a eliminar obra:     
     } elseif (isset($_POST['eliminar'])) {
         eliminarObra($_POST['id']);
+
+    // Si se envía el formulario correspondiente a modificar obra:
     } elseif (isset($_POST['modificar'])) {
         modificarObra($_POST['id'], $_POST['categoria'], $_POST['subcategoria'], $_POST['titulo'], $_POST['url'], $_POST['autor'], $_POST['fecha']);
     }
 }
 
-$categoriaSeleccionada = isset($_GET['categoria']) ? $_GET['categoria'] : null;
-$subcategoriaSeleccionada = isset($_GET['subcategoria']) ? $_GET['subcategoria'] : null;
-$obraSeleccionada = isset($_GET['modificar']) ? obtenerObra($_GET['modificar']) : null;
+// Si en la solitud GET se encuentra "modificar" significará que se ha "pulsado" el botón de modificar una obra.
+// En este caso, es establecerá la obra seleccionada llamarando a "obtenerObra" proporcionando el ID (que estaba contenido en el botón oculto)
+if (isset($_GET['modificar'])) {
+    $obraSeleccionada = obtenerObra($_GET['modificar']);
+} else {
+    $obraSeleccionada = null;
+}
 
+// Si en la solicitud GET se encuentra "categoría" significará que se ha pulsado sobre una de las categorías (Construcciones, Paisajes, Animales)
+if (isset($_GET['categoria'])) {
+    $categoriaSeleccionada = $_GET['categoria'];
+} else {
+    $categoriaSeleccionada = null;
+}
+
+// Si en la solicitud GET se encuentra "subcategoría" significará que se ha pulsado sobre una de las subcategorías
+if (isset($_GET['subcategoria'])) {
+    $subcategoriaSeleccionada = $_GET['subcategoria'];
+} else {
+    $subcategoriaSeleccionada = null;
+}
+
+// Se definen las siguientes variables de cara a mostrar correctamente las obras en función de los diferentes filtros posibles que se pueden aplicar
 $obras = obtenerObras($categoriaSeleccionada, $subcategoriaSeleccionada);
 $categorias = obtenerCategorias();
 $imagenes = obtenerImagenes();
 ?>
+
+
+
+<!-- SECCIÓN HTML -->
 
 <!DOCTYPE html>
 <html>
@@ -138,9 +176,9 @@ $imagenes = obtenerImagenes();
             <ul class="Navegador-Links">
                 <li><a class="enlace-nav" href="index.php">Página principal</a></li>
                 <li><a class="enlace-nav actual" href="coleccion.php">Colección</a></li>
-                <li><a class="enlace-nav" href="visita.php">Visita</a></li>
-                <li><a class="enlace-nav" href="exposiciones.php">Exposiciones</a></li>
-                <li><a class="enlace-nav" href="informacion.php">Información</a></li>
+                <li><a class="enlace-nav" href="visita.html">Visita</a></li>
+                <li><a class="enlace-nav" href="exposiciones.html">Exposiciones</a></li>
+                <li><a class="enlace-nav" href="informacion.html">Información</a></li>
                 <li><a class="enlace-nav" href="experiencias.php">Experiencias</a></li>
             </ul>
         </nav>
@@ -152,37 +190,50 @@ $imagenes = obtenerImagenes();
             <div class="cada-filtro">
                 <div class="filtro">
                     <button class="drop-boton">Categoría</button>
+
                     <div class="drop-contenido">
-                        <?php foreach ($categorias as $categoria): ?>
+                        <!-- Se muestran todas las categorías a la espera de que el usuario seleccione una --> 
+                        <?php 
+                            foreach ($categorias as $categoria): 
+                        ?>
+                            <!-- Se reenvía al usuario a la página con la url= coleccion.php?categoria=___ -->
                             <a href="coleccion.php?categoria=<?php echo $categoria; ?>"><?php echo $categoria; ?></a>
                         <?php endforeach; ?>
                     </div>
                 </div>
                 <div class="filtro">
+    
                     <button class="drop-boton">Subcategoría</button>
                     <div class="drop-contenido">
-                        <?php if ($categoriaSeleccionada): ?>
-                            <?php $subcategorias = obtenerSubcategorias($categoriaSeleccionada); ?>
+                        <!-- Si el usuario ha seleccionado una categoría, se muestran las sub-categorías correspondientes a esta -->
+                        <?php if ($categoriaSeleccionada): ?> 
+                            <?php $subcategorias = obtenerSubcategorias($categoriaSeleccionada); // subcateogorias pasará a contener un array con las subcategorías correspondientes ?>
+                            <!-- Se reenvía al usuario a la página con la url= coleccion.php?categoria=(categoriaSeleccionada)&subcategoria=(subcategoriaSeleccionada) -->
                             <?php foreach ($subcategorias as $subcategoria): ?>
                                 <a href="coleccion.php?categoria=<?php echo $categoriaSeleccionada; ?>&subcategoria=<?php echo $subcategoria; ?>"><?php echo $subcategoria; ?></a>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <a href="#">Selecciona una categoría primero</a>
+                            <a href="#">Selecciona una categoría primero</a> <!-- Si no se selecciona una categoria, se muestra un mensaje indicándolo -->
                         <?php endif; ?>
                     </div>
                 </div>
+                            
+
                 <div class="filtro">
-                    <a href="coleccion.php" class="reset-boton">Resetear Filtros</a>
+                    <a href="coleccion.php" class="reset-boton">Resetear Filtros</a> 
                 </div>
             </div>
         </section>
 
         <section class="contenedor-principal">
             <h1>COLECCIÓN DE OBRAS</h1>
-
-            <?php if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'Administrador'): ?>
+            
+            <?php
+                if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'Administrador'): 
+            ?>
                 <section class="formulario-obras">
                     <h2>Agregar Nueva Obra</h2>
+                    
                     <form action="coleccion.php" method="POST">
                         <label for="categoria">Categoría:</label>
                         <select id="categoria" name="categoria" required>
@@ -190,29 +241,44 @@ $imagenes = obtenerImagenes();
                             <option value="Animales">Animales</option>
                             <option value="Paisajes">Paisajes</option>
                         </select><br>
+                        
                         <label for="subcategoria">Subcategoría:</label>
                         <select id="subcategoria" name="subcategoria" required>
-                            <!-- Add JavaScript to dynamically populate this based on category selection -->
+                        
                         </select><br>
                         <label for="titulo">Título:</label>
                         <input type="text" id="titulo" name="titulo" required><br>
                         <label for="url">URL de la Imagen:</label>
                         <select id="url" name="url" required>
-                            <?php foreach ($imagenes as $imagen): ?>
-                                <option value="obras_fotos/<?php echo $imagen; ?>"><?php echo $imagen; ?></option>
-                            <?php endforeach; ?>
+                            <?php 
+                                foreach ($imagenes as $imagen): 
+                            ?>
+                                <option value="obras_fotos/<?php echo $imagen; ?>">
+                                <?php 
+                                    echo $imagen; 
+                                ?>
+                                </option>
+                            <?php 
+                                endforeach; 
+                            ?>
                         </select><br>
                         <label for="autor">Autor:</label>
                         <input type="text" id="autor" name="autor"><br>
+                        
                         <label for="fecha">Fecha:</label>
                         <input type="text" id="fecha" name="fecha"><br>
+                        
                         <input type="submit" name="agregar" value="Agregar Obra">
                     </form>
                 </section>
 
-                <?php if ($obraSeleccionada): ?>
+                <?php 
+                // Si $obraSeleccionada es TRUE significará que se ha pulsado sobre el botón "Modificar" correspondiente a una obra
+                    if ($obraSeleccionada): 
+                ?>
                     <section class="formulario-obras">
                         <h2>Modificar Obra</h2>
+                        
                         <form action="coleccion.php" method="POST">
                             <input type="hidden" name="id" value="<?php echo $obraSeleccionada['id']; ?>">
                             <label for="categoria-modificar">Categoría:</label>
@@ -223,7 +289,7 @@ $imagenes = obtenerImagenes();
                             </select><br>
                             <label for="subcategoria-modificar">Subcategoría:</label>
                             <select id="subcategoria-modificar" name="subcategoria" required>
-                                <!-- Add JavaScript to dynamically populate this based on category selection -->
+
                             </select><br>
                             <label for="titulo-modificar">Título:</label>
                             <input type="text" id="titulo-modificar" name="titulo" value="<?php echo $obraSeleccionada['titulo']; ?>" required><br>
@@ -252,16 +318,27 @@ $imagenes = obtenerImagenes();
                         <h3><?php echo $obra['titulo']; ?></h3>
                         <p>Autor: <?php echo $obra['autor']; ?></p>
                         <p>Fecha: <?php echo $obra['fecha']; ?></p>
-                        <?php if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'Administrador'): ?>
-                            <form action="coleccion.php" method="POST" onsubmit="return confirm('¿Seguro que deseas eliminar esta obra?');">
-                                <input type="hidden" name="id" value="<?php echo $obra['id']; ?>">
-                                <input type="submit" name="eliminar" value="Eliminar">
+                        
+                        <?php 
+                            if (isset($_SESSION['tipo']) && $_SESSION['tipo'] == 'Administrador'): 
+                        ?>  
+                            <!-- FORMULARIO PARA ELIMINAR UNA OBRA -->
+                            <form action="coleccion.php" method="POST"
+                            onsubmit="return confirm('¿Seguro que deseas eliminar esta obra?');"> <!-- Al activar el formulario se muestra un cuadro de diálogo de confirmación -->
+                                <input type="hidden" name="id" value="<?php echo $obra['id']; ?>"> <!-- Campo oculto para enviar el ID de la obra a eliminar -->
+                                <input type="submit" name="eliminar" value="Eliminar"> <!-- Botón que envía el formulario -->
                             </form>
+                            
+                            <!-- FORMULARIO DE SOLICITUD PARA MODIFICAR UNA OBRA 
+                                Al seleccionarlo, se procesará un envío get del tipo modificar=2 (para el caso de la obra con ID=2)
+                            -->    
                             <form action="coleccion.php" method="GET">
                                 <input type="hidden" name="modificar" value="<?php echo $obra['id']; ?>">
                                 <input type="submit" value="Modificar">
                             </form>
-                        <?php endif; ?>
+                        <?php 
+                            endif; 
+                        ?>
                     </div>
                 <?php endforeach; ?>
             </div>
@@ -273,39 +350,6 @@ $imagenes = obtenerImagenes();
         <a class="contact" href="pie_pagina/contacto.html">Contacto</a>
         <p>Derechos de autor © 2024 Museo Mojang.</p>
     </footer>
-
-    <script>
-        function populateSubcategories(selectElement, subcategorySelectElement) {
-            var categoria = selectElement.value;
-            subcategorySelectElement.innerHTML = '';
-            if (categoria === 'Construcciones') {
-                subcategorySelectElement.innerHTML += '<option value="Piedra">Piedra</option>';
-                subcategorySelectElement.innerHTML += '<option value="Madera">Madera</option>';
-                subcategorySelectElement.innerHTML += '<option value="Metal">Metal</option>';
-            } else if (categoria === 'Animales') {
-                subcategorySelectElement.innerHTML += '<option value="Mamiferos">Mamíferos</option>';
-                subcategorySelectElement.innerHTML += '<option value="Aves">Aves</option>';
-                subcategorySelectElement.innerHTML += '<option value="Monstruos">Monstruos</option>';
-            } else if (categoria === 'Paisajes') {
-                subcategorySelectElement.innerHTML += '<option value="Nocturnos">Nocturnos</option>';
-                subcategorySelectElement.innerHTML += '<option value="Veraniegos">Veraniegos</option>';
-                subcategorySelectElement.innerHTML += '<option value="Bonitos">Bonitos</option>';
-            }
-        }
-
-        document.getElementById('categoria').addEventListener('change', function() {
-            populateSubcategories(this, document.getElementById('subcategoria'));
-        });
-
-        document.getElementById('categoria-modificar').addEventListener('change', function() {
-            populateSubcategories(this, document.getElementById('subcategoria-modificar'));
-        });
-
-        // Populate subcategories on page load for modification form
-        if (document.getElementById('categoria-modificar').value) {
-            populateSubcategories(document.getElementById('categoria-modificar'), document.getElementById('subcategoria-modificar'));
-            document.getElementById('subcategoria-modificar').value = '<?php echo $obraSeleccionada['subcategoria']; ?>';
-        }
-    </script>
+                        
 </body>
 </html>

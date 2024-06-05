@@ -24,20 +24,6 @@
                     <p> Para darte de alta como usuario, completa el formulario</p>
                 </section> 
 
-                <!-- Usamos una clase InicioSesion que contendrá el formulario de inicio de sesión-->
-                <section class="InicioSesion">
-                    <form>
-                        <label for="Correo">Correo electrónico: </label><br>
-                        <input type="text" id="Correo" name="Correo" placeholder="ejemplo@gmail.com"><br>
-
-                        <label for="Contraseña">Contraseña: </label><br>
-                        <input type="password" id="Contraseña" name="Contraseña"><br>
-
-                        <input type="submit" id="iniciar" value="Iniciar Sesión"><br>
-                    </form>
-
-                    <a href="alta_usuario.html" id="registro">Registrarse</a>
-                </section>
             </section>
 
             <!-- Sección que corresponderá con el menú de navegación-->
@@ -84,7 +70,7 @@
                     <label for="edad">Edad:</label>
                     <input type="number" id="edad" name="edad" min="0" max="150"required><br><br>
                     
-                    <label for="genero">Género:</label> <!-- Lista desplegable-->
+                    <label for="genero">Género:</label>
                     <select id="genero" name="genero" required>
                         <option value="">Seleccione</option>
                         <option value="masculino">Masculino</option>

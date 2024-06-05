@@ -15,13 +15,45 @@ session_start();
         <section class="cabecera">
             <a href="index.php"><img src="imagenes/Logo.png" id="logo" alt="logo" class="logo"> </a>
             <section class="InicioSesion">
-                <?php if (isset($_SESSION['nombre'])): ?>
-                    <p>Bienvenido, <?php echo $_SESSION['nombre']; ?> - <?php echo $_SESSION['tipo']; ?></p>
+                
+                <!-- Compruebo si la sesión está activa para algún usuario (es decir, si un usuario ha iniciado sesión) -->
+                <?php 
+                    if (isset($_SESSION['nombre'])): 
+                ?>
+                    <p>Bienvenido, 
+                        <?php 
+                            echo $_SESSION['nombre']; 
+                        ?>
+                        ->
+                        <?php 
+                            echo $_SESSION['tipo']; 
+                        ?>
+                    </p>
+                    
                     <a href="cerrar_sesion.php" id="cerrar">Cerrar Sesión</a>
+                    
+                <!-- En el caso de que el usuario no haya iniciado sesión o no lo haya hecho correctamente: -->
                 <?php else: ?>
-                    <?php if (isset($_SESSION['error'])): ?>
-                        <p style="color:red;"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
-                    <?php endif; ?>
+                    
+                    <!--Si trata de iniciar sesión incorrectamente (con credenciales incorrectas)-->
+                    <?php 
+                        if (isset($_SESSION['error'])): 
+                    ?>
+                        <!-- Se muestra el mensaje de error correspondiente, y se reestablece -->
+                        <p style="color:red;">
+                            <?php
+                                echo $_SESSION['error']; 
+                                unset($_SESSION['error']); 
+                            ?>
+                        </p>
+                    
+                    <?php 
+                        endif; 
+                    ?>
+
+                    <!--
+                        Se muestra el formulario de inicio de sesión en caso de que el usuario trate de acceder incorrectamente
+                        o aún no haya intentado iniciar sesión-->
                     <form action="iniciar_sesion.php" method="POST">
                         <label for="Usuario">Nombre de Usuario: </label><br>
                         <input type="text" id="Usuario" name="nombre" placeholder="soyUnUsuario"><br>
@@ -30,7 +62,11 @@ session_start();
                         <input type="submit" id="iniciar" value="Iniciar Sesión"><br>
                     </form>
                     <a href="alta_usuario.php" id="registro">Registrarse</a>
-                <?php endif; ?>
+                
+                <?php 
+                    endif;
+                ?>
+                
             </section>
         </section>
         <section class="contenedor-links">
