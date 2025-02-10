@@ -1,17 +1,16 @@
-# MuseoPW
+# 🏛️ Museo Ficticio - Página Web  
+📌 *Proyecto de la asignatura de Programación Web*  
 
-Repositorio en el que trabajaré con el proyecto del Museo para la asignatura de Programación Web
+## 📖 Descripción  
+Este repositorio contiene el código fuente de una página web ficticia para un museo, desarrollada como parte de la asignatura de Programación Web. La web ofrece información sobre exposiciones, artistas y la historia del museo, además de funcionalidades interactivas para mejorar la experiencia del usuario.  
 
-En la carpeta "/colecciones" se encuentran las 3 colecciones "coleccion_animales.html", "coleccion_construcciones.html", y "coleccion_paisajes.html".
+## 🛠️ Tecnologías Utilizadas  
+- **HTML**: Estructura del contenido  
+- **CSS**: Estilos y diseño responsivo  
+- **JavaScript**: Funcionalidades interactivas en el frontend  
+- **PHP**: Lógica del backend y procesamiento de datos  
+- **MySQL**: Para la gestión de bases de datos
 
-En la carpeta "/css" se encuentran todos los css que he utilizado.
-
-En la carpeta "/imagenes" se encuentran las imágenes generales que me han servido de ayuda para realizar el proyecto (fondos, cursores, elementos...)
-
-En la carpeta "/obras_documentos" se encuentran los ".html" relativos a cada una de las obras individuales: "obra1.html", "obra2.html", "obra3.html".
-
-En la carpeta "/obras_fotos" se encuentran las imágenes realtivas a las obras del museo.
-
-En la carpeta "/pie_pagina" encontramos los ".html" que se encuentran a pie de página, junto con el documento "como_se_hizo.pdf". 
-
-Finalmente, en la carpeta raíz encontramos el resto de documentos ".html".
+## 📜 Detalles Importantes  
+- 📂 **`/pie_pagina/`**: Contiene los archivos `.html` que forman parte del pie de página.  
+- 📄 **`como_se_hizo.pdf`**: Documento con una explicación detallada sobre el proceso de desarrollo de la página web.  
